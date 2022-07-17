@@ -13,16 +13,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-primary-500 relative">
+      <div className="relative">
         <Navbar />
-        <div className="pb-[30px] md:h-[75vh]">
+        <div className="bg-primary-500  md:h-[70vh]">
           <div className="container items-center h-full px-4 mx-auto md:flex">
             <div className="md:flex-1 md:w-52">
               <HomeSvg className="w-full" />
             </div>
             <div className="ml-10 md:flex-1 md:w-52">
-              <h1 className="text-[40px] font-bold text-white ">WDS Agency</h1>
-              <p className="text-white ">
+              <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
+              <p className="text-white mt-1">
                 We are a team of web developers and designers who create high
                 quality websites and web applications. Lorem ipsum dolor, sit
                 amet consectetur adipisicing elit. Vero commodi, alias aut
@@ -32,7 +32,24 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          <WaveSvg className="w-full block  left-0 md:bottom-[10px] sm:hidden" />
+          <WaveSvg className="md:w-full md:block" />
+        </div>
+        <div className="px-6 py-2 lg:px-16 lg:py-0 mx-auto justify-center items-center flex">
+          <section className=" md:mt-36">
+            <div className="md:mx-3 max-w-lg">
+              <h2 className="text-4xl font-bold">Nos services</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat perferendis inventore veniam assumenda, quod
+                consequuntur!
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 sm:mt-10">
+              <Card />
+              <Card />
+              <Card />
+            </div>
+          </section>
         </div>
       </div>
     </div>
@@ -40,3 +57,34 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+const Card = () => {
+  return (
+    <div className="card mt-3 md:mx-3">
+      <div className="rounded-bl-lg rounded-tr-lg overflow-hidden">
+        <img
+          className="w-full"
+          src="https://source.unsplash.com/random"
+          alt="Sunset in the mountains"
+        />
+      </div>
+      <h5 className="text-2xl font-medium mt-3 ">Lorem, ipsum dolor.</h5>
+      <p className="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+        nihil.
+      </p>
+      <div className="px-6 pt-4 pb-2">
+        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+          #photography
+        </span>
+        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+          #travel
+        </span>
+        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+          #winter
+        </span>
+      </div>
+    </div>
+  );
+};
