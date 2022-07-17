@@ -15,10 +15,11 @@ const Contacts: NextPage = () => {
       <div className="bg-primary-500 relative">
         <Navbar />
       </div>
-      <div>
-        <p>Contactez Nous</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 sm:mt-10">
+      <h1 className="text-5xl font-bold text-bleu ">Contactez Nous</h1>
       </div>
-      <div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 sm:mt-10">
         <div>
           <h2>Tel:6654512450</h2>
           <h2>Email:info@wdsagency.com</h2>
