@@ -8,7 +8,7 @@ export default function Navbar() {
     <header className="flex flex-wrap items-center px-6 py-2 bg-primary-500 lg:px-16 lg:py-0">
       <div className="flex items-center justify-between flex-1">
         <a href="#">
-          <img src={Logo.src} className="w-[60px] h-[50px] mt-[10px]" />
+          <img src={Logo.src} className="w-[55px] h-[40px] mt-[10px]" />
         </a>
       </div>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
           <img
             className="w-10 h-10 border-2 border-transparent rounded-full hover:border-[white]"
             src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
-            alt="Andy Leverenz"
+            alt="User avatar"
           />
         </a>
       </div>
