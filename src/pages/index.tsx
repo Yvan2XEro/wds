@@ -3,6 +3,10 @@ import Head from "next/head";
 import Navbar from "../common/components/layouts/Navbar";
 import HomeSvg from "../common/assets/svg/homebg.svg";
 import WaveSvg from "../common/assets/svg/wave.svg";
+import Card from "@components/shared/Card";
+import AboutUs from "@components/shared/AboutUs";
+import { FaRegSmileBeam } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +26,7 @@ const Home: NextPage = () => {
             </div>
             <div className="ml-10 md:flex-1 md:w-52">
               <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
-              <p className="text-white mt-1">
+              <p className="mt-1 text-white">
                 We are a team of web developers and designers who create high
                 quality websites and web applications. Lorem ipsum dolor, sit
                 amet consectetur adipisicing elit. Vero commodi, alias aut
@@ -32,11 +36,11 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          <WaveSvg className="md:w-full md:block" />
+          <WaveSvg className="md:w-full md:block sm:opacity-0" />
         </div>
-        <div className="px-6 py-2 lg:px-16 lg:py-0 mx-auto justify-center items-center flex">
+        <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
           <section className=" md:mt-36">
-            <div className="md:mx-3 max-w-lg">
+            <div className="max-w-lg md:mx-3">
               <h2 className="text-4xl font-bold">Nos services</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,10 +48,73 @@ const Home: NextPage = () => {
                 consequuntur!
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 sm:mt-10">
-              <Card />
-              <Card />
-              <Card />
+            <div className="px-2 mt-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <Card />
+                <Card />
+                <Card />
+              </div>
+              <div className="mt-32">
+                <AboutUs />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-5 rounded-none shadow-none">
+                <StatisticCard
+                  count={323}
+                  icon={
+                    <FaRegSmileBeam
+                      size={60}
+                      className="text-primary-300 mx-auto"
+                    />
+                  }
+                  text="Clients satisfaits"
+                />
+                <StatisticCard
+                  count={323}
+                  icon={
+                    <FaRegSmileBeam
+                      size={60}
+                      className="text-primary-300 mx-auto"
+                    />
+                  }
+                  text="Projets acheves"
+                />
+                <StatisticCard
+                  count={323}
+                  icon={
+                    <FaRegSmileBeam
+                      size={60}
+                      className="text-primary-300 mx-auto"
+                    />
+                  }
+                  text="Projets acheves"
+                />
+                <StatisticCard
+                  count={323}
+                  icon={
+                    <FaRegSmileBeam
+                      size={60}
+                      className="text-primary-300 mx-auto"
+                    />
+                  }
+                  text="Projets acheves"
+                />
+              </div>
+              <motion.div className="container w-[10rem] overflow-x-auto">
+                <motion.div className="flex">
+                  {[1, 2, 3, 4, 5].map((e) => (
+                    <motion.div
+                      key={e}
+                      className="min-h-[40rem] min-w-[30rem] p-[20px]"
+                    >
+                      <img
+                        src="https://source.unsplash.com/random"
+                        alt={"image " + e}
+                        className="w-full h-full rounded"
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
             </div>
           </section>
         </div>
@@ -58,33 +125,21 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const Card = () => {
+type IStatisticCardProps = {
+  count: number;
+  icon: any;
+  text: string;
+};
+const StatisticCard = ({ count, icon, text }: IStatisticCardProps) => {
   return (
-    <div className="card mt-3 md:mx-3">
-      <div className="rounded-bl-lg rounded-tr-lg overflow-hidden">
-        <img
-          className="w-full"
-          src="https://source.unsplash.com/random"
-          alt="Sunset in the mountains"
-        />
+    <>
+      <div className="card text-center py-5">
+        <h2 className="text-primary-300 text-3xl">
+          <span className="text-4xl font-bold">{count}</span>+
+        </h2>
+        <p className="my-3 text-xl">{text}</p>
+        <div className="mx-auto">{icon}</div>
       </div>
-      <h5 className="text-2xl font-medium mt-3 ">Lorem, ipsum dolor.</h5>
-      <p className="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
-      </p>
-      <div className="px-6 pt-4 pb-2">
-        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-          #photography
-        </span>
-        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-          #travel
-        </span>
-        <span className="inline-block bg-primary-300 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-          #winter
-        </span>
-      </div>
-    </div>
+    </>
   );
 };

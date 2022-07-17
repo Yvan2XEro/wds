@@ -34,7 +34,7 @@ export default function Navbar() {
           <ul className="items-center justify-between pt-4 text-base text-[white] lg:flex lg:pt-0">
             <li>
               <a
-                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 hover:border-[white]"
+                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
                 href="#"
               >
                 Features
@@ -42,7 +42,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 hover:border-[white]"
+                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
                 href="#"
               >
                 Pricing
@@ -50,7 +50,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 hover:border-[white]"
+                className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
                 href="#"
               >
                 Documentation
@@ -58,7 +58,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 hover:border-[white] lg:mb-0"
+                className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white] lg:mb-0"
                 href="#"
               >
                 Support
@@ -71,7 +71,7 @@ export default function Navbar() {
           className="flex items-center justify-start mb-4 lg:ml-4 lg:mb-0 pointer-cursor"
         >
           <img
-            className="w-10 h-10 border-2 border-transparent rounded-full hover:border-[white]"
+            className="w-10 h-10 border-2 border-transparent rounded-full duration-100 hover:border-[white]"
             src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
             alt="User avatar"
           />
