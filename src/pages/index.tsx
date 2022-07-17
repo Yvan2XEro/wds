@@ -15,15 +15,13 @@ const Home: NextPage = () => {
 
       <div className="bg-primary-500 relative">
         <Navbar />
-        <div className="pb-[30px] h-[75vh]  bg-[red]">
-          {/* <div className="container items-center h-full px-4 mx-auto md:flex">
+        <div className="pb-[30px] md:h-[75vh]">
+          <div className="container items-center h-full px-4 mx-auto md:flex">
             <div className="md:flex-1 md:w-52">
               <HomeSvg className="w-full" />
             </div>
             <div className="ml-10 md:flex-1 md:w-52">
-              <h1 className="text-[40px] font-bold text-white text-center">
-                WDS Agency
-              </h1>
+              <h1 className="text-[40px] font-bold text-white ">WDS Agency</h1>
               <p className="text-white ">
                 We are a team of web developers and designers who create high
                 quality websites and web applications. Lorem ipsum dolor, sit
@@ -33,10 +31,8 @@ const Home: NextPage = () => {
                 rem nam possimus harum.
               </p>
             </div>
-          </div> */}
-          <div className="w-full">
-            <img src="wave.svg" className="w-full" />
           </div>
+          <WaveSvg className="w-full block  left-0 md:bottom-[10px] sm:hidden" />
         </div>
       </div>
     </div>

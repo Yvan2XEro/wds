@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -20,8 +22,12 @@ module.exports = {
         'primary-300': '#6869f7',
         'primary-500': '#211d58',
         'pink': '#e432a2',
-      }
+      },
     },
+    screens: {
+      ...defaultTheme.screens,
+      'sm': { 'max': '790px' },
+    }
   },
   plugins: [],
 }
