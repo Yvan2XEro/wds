@@ -20,13 +20,13 @@ const Home: NextPage = () => {
 
       <div className="relative">
         <Navbar />
-        <div className="bg-primary-500  md:h-[70vh]">
-          <div className="container items-center h-full px-4 mx-auto md:flex">
+        <div className="bg-primary-500  w-full">
+          <div className="w-full items-center h-full px-4 mx-auto flex flex-wrap mt-[55px]">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="md:flex-1 md:w-52"
+              className="md:flex-1 md:w-52 sm:mx-auto"
             >
               <HomeSvg className="w-full" />
             </motion.div>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="ml-10 md:flex-1 md:w-52"
+              className="ml-10 md:flex-1 md:w-52 sm:mx-auto"
             >
               <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
               <p className="mt-1 text-white">
@@ -47,8 +47,8 @@ const Home: NextPage = () => {
               </p>
             </motion.div>
           </div>
-          <WaveSvg className="md:w-full md:block sm:opacity-0" />
         </div>
+        <WaveSvg className="md:w-full md:block" />
         <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
           <section className=" md:mt-36">
             <div className="max-w-lg md:mx-3">
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                       <motion.a
                         whileHover={{
                           scale: 1.1,
-                          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                          boxShadow: "0px 0px 10px #00000080",
                           transition: { yoyo: Infinity, duration: 0.2 },
                         }}
                         href="#"

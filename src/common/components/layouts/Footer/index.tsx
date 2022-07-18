@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React, { useMemo } from "react";
 import { FaMapMarkerAlt, FaPhone, FaVoicemail } from "react-icons/fa";
 import Logo from "../../../assets/logos/logo1.png";
@@ -8,9 +9,11 @@ export default function Footer() {
     <footer className="px-6 py-8 bg-primary-500 lg:px-16 lg:py-0">
       <div className="py-8">
         <div className="flex items-center justify-between flex-1">
-          <a href="#">
-            <img src={Logo.src} className="w-[70px] h-[60px] mt-[10px]" />
-          </a>
+          <Link href="#">
+            <a>
+              <img src={Logo.src} className="w-[70px] h-[60px] mt-[10px]" />
+            </a>
+          </Link>
         </div>
         <div className="flex flex-wrap items-center justify-between">
           <div className="relative">
@@ -18,34 +21,43 @@ export default function Footer() {
               Contacts
             </h2>
             <ul>
-              <li className="flex mt-3 text-white items-center">
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
                 <FaVoicemail size={30} className="round block" />
                 <span className="block ml-2">
-                  <a href="#" className="block">
-                    info@wds.bys
-                  </a>
-                  <a href="#" className="block">
-                    support@wds.bys
-                  </a>
+                  <Link href="#">
+                    <a className="block">info@wds.bys</a>
+                  </Link>
+                  <Link href="#">
+                    <a className="block">support@wds.bys</a>
+                  </Link>
                 </span>
-              </li>
-              <li className="flex mt-3 text-white items-center">
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
                 <FaPhone size={30} className="round block" />
                 <span className="block ml-2">
-                  <a href="#" className="block">
-                    +237 678 987 654
-                  </a>
-                  <a href="#" className="block">
-                    +237 678 987 654
-                  </a>
+                  <Link href="#">
+                    <a className="block">+237 678 987 654</a>
+                  </Link>
+                  <Link href="#">
+                    <a className="block">+237 678 987 654</a>
+                  </Link>
                 </span>
-              </li>
-              <li className="flex mt-3 text-white items-center">
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
                 <FaMapMarkerAlt size={30} className="round block" />
                 <span className="block ml-2">
                   Dschang, Cameroun, Ngui-foreke
                 </span>
-              </li>
+              </motion.li>
             </ul>
           </div>
           <div className="relative">
@@ -53,42 +65,38 @@ export default function Footer() {
               Nos liens
             </h2>
             <ul>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
-                  Acceuil
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
-                  Services
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
-                  Blog
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
-                  FAQs
-                </motion.a>
-              </li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <Link href="#">
+                  <a className="block">Acceuil</a>
+                </Link>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <Link href="#">
+                  <a className="block">Services</a>
+                </Link>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <Link href="#">
+                  <a className="block">Blog</a>
+                </Link>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <Link href="#">
+                  <a className="block">FAQs</a>
+                </Link>
+              </motion.li>
             </ul>
           </div>
           <div className="relative">
@@ -96,42 +104,38 @@ export default function Footer() {
               Nos services
             </h2>
             <ul>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <a href="#" className="block">
                   Web design
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
+                </a>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <a href="#" className="block">
                   Infographie
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
+                </a>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <a href="#" className="block">
                   Developpement de sites web
-                </motion.a>
-              </li>
-              <li className="flex mt-3 text-white items-center">
-                <motion.a
-                  whileHover={{ scale: 1.1, originX: -1 }}
-                  href="#"
-                  className="block"
-                >
+                </a>
+              </motion.li>
+              <motion.li
+                whileHover={{ scaleX: 1.1, originX: -1 }}
+                className="flex mt-3 text-white cursor-pointer items-center"
+              >
+                <a href="#" className="block">
                   Developpement d'applications mobiles
-                </motion.a>
-              </li>
+                </a>
+              </motion.li>
             </ul>
           </div>
         </div>
@@ -144,7 +148,9 @@ const Copyrigth = () => {
   const year = useMemo(() => new Date().getFullYear(), []);
   return (
     <div className="flex justify-center items-center mt-10">
-      <p className="text-white text-sm">© {year} WDS. All rights reserved.</p>
+      <p className="text-white text-sm">
+        © {year} <span className="font-bold">WDS</span>. All rights reserved.
+      </p>
     </div>
   );
 };

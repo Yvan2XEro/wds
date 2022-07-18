@@ -1,12 +1,13 @@
 import React from "react";
 import "./styles.module.css";
-import Image from "next/future/image";
 import Logo from "../../../assets/logos/logo1.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="bg-primary-500">
+    <header className="bg-primary-500 fixed top-0 left-0 w-full z-10">
+      {/*  fixed top-0 left-0 w-full z-10 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -18,9 +19,9 @@ export default function Navbar() {
           transition={{ duration: 1 }}
           className="flex items-center justify-between flex-1"
         >
-          <a href="#">
+          <Link href="/">
             <img src={Logo.src} className="w-[55px] h-[40px] mt-[10px]" />
-          </a>
+          </Link>
         </motion.div>
 
         <motion.label
@@ -51,51 +52,48 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
         >
           <nav>
-            <ul className="items-center justify-between pt-4 text-base text-[white] lg:flex lg:pt-0">
-              <li>
-                <a
-                  className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
-                  href="#"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
-                  href="#"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]"
-                  href="#"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white] lg:mb-0"
-                  href="#"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
+            <AnimatePresence>
+              <ul className="items-center justify-between pt-4 text-base text-[white] lg:flex lg:pt-0">
+                <li>
+                  <Link href="/">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                      Acceuil
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                      Services
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                      Blog
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#">
+                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white] lg:mb-0">
+                      A propos
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </AnimatePresence>
           </nav>
-          <a
-            href="#"
-            className="flex items-center justify-start mb-4 lg:ml-4 lg:mb-0 pointer-cursor"
-          >
-            <img
-              className="w-10 h-10 border-2 border-transparent rounded-full duration-100 hover:border-[white]"
-              src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
-              alt="User avatar"
-            />
-          </a>
+          <Link href="#">
+            <a className="flex items-center justify-start mb-4 lg:ml-4 lg:mb-0 pointer-cursor">
+              <img
+                className="w-10 h-10 border-2 border-transparent rounded-full duration-100 hover:border-[white]"
+                src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
+                alt="User avatar"
+              />
+            </a>
+          </Link>
         </motion.div>
       </motion.div>
     </header>
