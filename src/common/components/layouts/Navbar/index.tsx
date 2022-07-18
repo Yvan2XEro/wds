@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="bg-primary-500 fixed top-0 left-0 w-full z-10">
+    <header className="bg-primary-500 fixed top-0 left-0 w-full z-20">
       {/*  fixed top-0 left-0 w-full z-10 */}
       <motion.div
         initial={{ opacity: 0 }}

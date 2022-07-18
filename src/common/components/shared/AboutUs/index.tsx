@@ -9,13 +9,11 @@ export default function AboutUs() {
         <img
           src="https://source.unsplash.com/random"
           alt="About us image"
-          className="rounded-md md:h-[340px] md:w-[510px] lg:h-[432px] lg:w-[649px]"
+          className="rounded-md md:h-[340px] md:w-[510px] lg:h-[432px] lg:w-[649px] object-cover"
         />
       </div>
       <div className="px-4 mt-2">
-        <h6 className="inline-block p-2 px-3 text-xl uppercase border-2 border-primary-300 text-primary-300 rounded-xl">
-          A propos de nous
-        </h6>
+        <h6 className="outline-rounded">A propos de nous</h6>
         <h2 className="mt-2 text-4xl font-bold">
           Nous somme une equipe creative
         </h2>

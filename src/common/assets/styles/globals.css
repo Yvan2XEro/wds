@@ -12,3 +12,6 @@
  .btn-primary {
    @apply rounded-[100px] min-w-[150px] text-center bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-lg font-bold p-2 mt-5 inline-block
  }
+ .outline-rounded{
+  @apply inline-block p-2 px-3 text-xl uppercase border-2 border-primary-300 text-primary-300 rounded-xl
+ }

@@ -31,10 +31,10 @@ const Home: NextPage = () => {
               <HomeSvg className="w-full" />
             </motion.div>
             <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="ml-10 md:flex-1 md:w-52 sm:mx-auto"
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="ml-10 md:flex-1 md:w-52 sm:mx-auto sm:mt-10"
             >
               <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
               <p className="mt-1 text-white">
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             </motion.div>
           </div>
         </div>
-        <WaveSvg className="md:w-full md:block" />
+        <WaveSvg className="min-w-full block" />
         <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
           <section className=" md:mt-36">
             <div className="max-w-lg md:mx-3">
