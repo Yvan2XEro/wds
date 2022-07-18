@@ -104,6 +104,18 @@ export default function Navbar() {
                     </a>
                   </Link>
                 </motion.li>
+                <motion.li
+                  whileHover={{
+                    scale: 1.08,
+                    transition: { yoyo: Infinity, duration: 0.2 },
+                  }}
+                >
+                  <Link href="/contacts">
+                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 lg:mb-0">
+                      Contacts
+                    </a>
+                  </Link>
+                </motion.li>
               </ul>
             </AnimatePresence>
           </nav>

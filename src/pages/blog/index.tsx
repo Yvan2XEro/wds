@@ -1,7 +1,4 @@
-import Navbar from "@components/layouts/Navbar";
-import { motion } from "framer-motion";
 import Head from "next/head";
-import WaveSvg from "../../common/assets/svg/wave.svg";
 import React from "react";
 import Footer from "@components/layouts/Footer";
 import { ArticleBlog } from "@components/shared/Card";

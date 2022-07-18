@@ -9,6 +9,7 @@ import { FaChevronRight, FaRegSmileBeam } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
 import Statistcis from "@components/shared/Statistics";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -37,21 +38,31 @@ const Home: NextPage = () => {
               transition={{ duration: 0.5 }}
               className="ml-10 md:flex-1 md:w-52 sm:mx-auto sm:mt-10"
             >
-              <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
+              <h1 className="text-5xl font-bold text-white ">
+                WEB AND DIGITAL SERVCES ANGENCY
+              </h1>
               <p className="mt-1 text-white">
-                We are a team of web developers and designers who create high
-                quality websites and web applications. Lorem ipsum dolor, sit
-                amet consectetur adipisicing elit. Vero commodi, alias aut
-                officia ducimus quasi inventore saepe, quod expedita,
-                exercitationem sint cupiditate praesentium suscipit ad delectus
-                rem nam possimus harum.
+                Vous voulez une application WEB ou mobile pour votre structure?
+                Vous avez besoin des affiches publicitaires pour votre
+                entreprise? Vous desirez une assistance technique dans vos
+                projets informatiques? Soumetez votre demande et nous vous
+                assisterons le plus rapidement possible.
               </p>
+
+              <div className="flex mt-4">
+                <Link href="/contacts">
+                  <a className="flex items-center justify-center bg-primary-300 text-white px-4 py-2 rounded-lg">
+                    <FaChevronRight className="mr-2" />
+                    <span>Nous contacter</span>
+                  </a>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
         <WaveSvg className="min-w-full block" />
         <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
-          <section className=" md:mt-36">
+          <section className=" md:mt-10">
             <div className="max-w-lg md:mx-3">
               <h2 className="text-4xl font-bold">Nos services</h2>
               <p>

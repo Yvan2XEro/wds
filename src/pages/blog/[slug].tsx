@@ -22,7 +22,7 @@ function Details() {
           </span>
           <img
             src="https://source.unsplash.com/random"
-            className="w-full rounded-lg"
+            className="w-full rounded-lg max-h-[500px] object-cover"
             alt="Image Developpement d'application android"
           />
         </div>
