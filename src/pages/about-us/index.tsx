@@ -1,9 +1,11 @@
 import Footer from "@components/layouts/Footer";
+import AboutUs from "@components/shared/AboutUs";
 import Header from "@components/shared/Header";
+import Statistcis from "@components/shared/Statistics";
 import Head from "next/head";
 import React from "react";
 
-function AboutUs() {
+function About() {
   return (
     <div>
       <Head>
@@ -17,9 +19,15 @@ function AboutUs() {
       <div>
         <Header title="A propos de nous" />
       </div>
+      <section className="px-6">
+        <AboutUs withMore={false} />
+      </section>
+      <section>
+        <Statistcis />
+      </section>
       <Footer />
     </div>
   );
 }
 
-export default AboutUs;
+export default About;

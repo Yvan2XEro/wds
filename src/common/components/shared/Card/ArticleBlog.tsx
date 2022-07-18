@@ -25,17 +25,20 @@ export function ArticleBlog() {
         quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
         nihil.
       </p>
-      <motion.a
-        whileHover={{
-          scale: 1.1,
-          boxShadow: "0px 0px 10px #00000080",
-          transition: { yoyo: Infinity, duration: 0.2 },
-        }}
-        href="/blog/developpement-android-react-native"
-        className="btn-primary"
-      >
-        Lire plus <FaChevronRight className="inline" />
-      </motion.a>
+      <Link href="/blog/developpement-android-react-native">
+        <a>
+          <motion.span
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0px 0px 10px #00000080",
+              transition: { yoyo: Infinity, duration: 0.2 },
+            }}
+            className="btn-primary"
+          >
+            Lire plus <FaChevronRight className="inline" />
+          </motion.span>
+        </a>
+      </Link>
     </div>
   );
 }

@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 
-export default function AboutUs() {
+type AboutUsPropsType = {
+  withMore: boolean;
+};
+export default function AboutUs({ withMore = true }: AboutUsPropsType) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
       <div className="px-4">
@@ -60,17 +64,22 @@ export default function AboutUs() {
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </li>
         </ul>
-        <motion.a
-          whileHover={{
-            scale: 1.1,
-            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
-            transition: { yoyo: Infinity, duration: 0.2 },
-          }}
-          href="#"
-          className="btn-primary"
-        >
-          Voir plus.
-        </motion.a>
+        {withMore && (
+          <Link href="/about-us">
+            <a>
+              <motion.span
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                  transition: { yoyo: Infinity, duration: 0.2 },
+                }}
+                className="btn-primary"
+              >
+                Voir plus.
+              </motion.span>
+            </a>
+          </Link>
+        )}
       </div>
     </div>
   );
