@@ -22,10 +22,20 @@ const Home: NextPage = () => {
         <Navbar />
         <div className="bg-primary-500  md:h-[70vh]">
           <div className="container items-center h-full px-4 mx-auto md:flex">
-            <div className="md:flex-1 md:w-52">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="md:flex-1 md:w-52"
+            >
               <HomeSvg className="w-full" />
-            </div>
-            <div className="ml-10 md:flex-1 md:w-52">
+            </motion.div>
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="ml-10 md:flex-1 md:w-52"
+            >
               <h1 className="text-5xl font-bold text-white ">WDS Agency</h1>
               <p className="mt-1 text-white">
                 We are a team of web developers and designers who create high
@@ -35,7 +45,7 @@ const Home: NextPage = () => {
                 exercitationem sint cupiditate praesentium suscipit ad delectus
                 rem nam possimus harum.
               </p>
-            </div>
+            </motion.div>
           </div>
           <WaveSvg className="md:w-full md:block sm:opacity-0" />
         </div>
@@ -123,9 +133,17 @@ const Home: NextPage = () => {
                         elit. Voluptatibus quia, nulla! Maiores et perferendis
                         eaque, exercitationem praesentium nihil.
                       </p>
-                      <a href="#" className="btn-primary">
+                      <motion.a
+                        whileHover={{
+                          scale: 1.1,
+                          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                          transition: { yoyo: Infinity, duration: 0.2 },
+                        }}
+                        href="#"
+                        className="btn-primary"
+                      >
                         Lire plus <FaChevronRight className="inline" />
-                      </a>
+                      </motion.a>
                     </div>
                   ))}
                 </div>

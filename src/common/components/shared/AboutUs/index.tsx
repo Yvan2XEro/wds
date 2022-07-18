@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 
@@ -61,9 +62,17 @@ export default function AboutUs() {
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </li>
         </ul>
-        <a href="#" className="btn-primary">
+        <motion.a
+          whileHover={{
+            scale: 1.1,
+            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+            transition: { yoyo: Infinity, duration: 0.2 },
+          }}
+          href="#"
+          className="btn-primary"
+        >
           Voir plus.
-        </a>
+        </motion.a>
       </div>
     </div>
   );
