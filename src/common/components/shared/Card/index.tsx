@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card() {
+function Card() {
   return (
     <article className="mt-3 card md:mx-3">
       <div className="overflow-hidden rounded-tr-lg rounded-bl-lg">
@@ -30,3 +30,6 @@ export default function Card() {
     </article>
   );
 }
+export default Card;
+
+export { ArticleBlog } from "./ArticleBlog";

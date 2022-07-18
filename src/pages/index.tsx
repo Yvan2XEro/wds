@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navbar from "../common/components/layouts/Navbar";
 import HomeSvg from "../common/assets/svg/homebg.svg";
 import WaveSvg from "../common/assets/svg/wave.svg";
-import Card from "@components/shared/Card";
+import Card, { ArticleBlog } from "@components/shared/Card";
 import AboutUs from "@components/shared/AboutUs";
 import { FaChevronRight, FaRegSmileBeam } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -114,44 +114,13 @@ const Home: NextPage = () => {
                 <h2 className="text-4xl font-bold">Nouveautes sur le blog</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   {[1, 2, 3, 4].map((e) => (
-                    <div key={e} className="min-h-[400px] mx-2 pb-1 card mt-7">
-                      <div className="overflow-hidden rounded-tr-lg rounded-bl-lg">
-                        <img
-                          className="w-full max-h-[300px] object-cover"
-                          src="https://source.unsplash.com/random"
-                          alt="Sunset in the mountains"
-                        />
-                      </div>
-                      <h6 className="text-xl my-2 uppercase text-primary-500">
-                        Developpement // Android
-                      </h6>
-                      <a href="#" className="inline-block text-2xl font-medium">
-                        Lorem, ipsum dolor.
-                      </a>
-                      <p className="text-base text-gray-700">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Voluptatibus quia, nulla! Maiores et perferendis
-                        eaque, exercitationem praesentium nihil.
-                      </p>
-                      <motion.a
-                        whileHover={{
-                          scale: 1.1,
-                          boxShadow: "0px 0px 10px #00000080",
-                          transition: { yoyo: Infinity, duration: 0.2 },
-                        }}
-                        href="#"
-                        className="btn-primary"
-                      >
-                        Lire plus <FaChevronRight className="inline" />
-                      </motion.a>
-                    </div>
+                    <ArticleBlog key={e} />
                   ))}
                 </div>
               </div>
             </div>
           </section>
         </div>
-        <WaveSvg className="md:w-full md:block sm:opacity-0 rotate-180 -bottom-2" />
         <Footer />
       </div>
     </div>
