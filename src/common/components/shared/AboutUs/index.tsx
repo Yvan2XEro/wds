@@ -61,10 +61,7 @@ export default function AboutUs() {
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </li>
         </ul>
-        <a
-          href="#"
-          className="rounded-[100px] min-w-[150px] text-center bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-lg font-bold p-2 mt-5 inline-block"
-        >
+        <a href="#" className="btn-primary">
           Voir plus.
         </a>
       </div>

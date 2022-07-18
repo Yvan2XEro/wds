@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Card() {
   return (
-    <div className="mt-3 card md:mx-3">
+    <article className="mt-3 card md:mx-3">
       <div className="overflow-hidden rounded-tr-lg rounded-bl-lg">
         <img
-          className="w-full"
+          className="w-full max-h-[300px] object-cover"
           src="https://source.unsplash.com/random"
           alt="Sunset in the mountains"
         />
@@ -27,6 +27,6 @@ export default function Card() {
           #winter
         </span>
       </div>
-    </div>
+    </article>
   );
 }

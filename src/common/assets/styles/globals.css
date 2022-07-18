@@ -9,3 +9,6 @@
  .card {
     @apply rounded-xl shadow-lg
  }
+ .btn-primary {
+   @apply rounded-[100px] min-w-[150px] text-center bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-lg font-bold p-2 mt-5 inline-block
+ }

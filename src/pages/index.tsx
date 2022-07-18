@@ -5,8 +5,9 @@ import HomeSvg from "../common/assets/svg/homebg.svg";
 import WaveSvg from "../common/assets/svg/wave.svg";
 import Card from "@components/shared/Card";
 import AboutUs from "@components/shared/AboutUs";
-import { FaRegSmileBeam } from "react-icons/fa";
+import { FaChevronRight, FaRegSmileBeam } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Footer from "@components/layouts/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -99,25 +100,41 @@ const Home: NextPage = () => {
                   text="Projets acheves"
                 />
               </div>
-              <motion.div className="container w-[10rem] overflow-x-auto">
-                <motion.div className="flex">
-                  {[1, 2, 3, 4, 5].map((e) => (
-                    <motion.div
-                      key={e}
-                      className="min-h-[40rem] min-w-[30rem] p-[20px]"
-                    >
-                      <img
-                        src="https://source.unsplash.com/random"
-                        alt={"image " + e}
-                        className="w-full h-full rounded"
-                      />
-                    </motion.div>
+              <div className="mt-20">
+                <h2 className="text-4xl font-bold">Nouveautes sur le blog</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  {[1, 2, 3, 4].map((e) => (
+                    <div key={e} className="min-h-[400px] mx-2 pb-1 card mt-7">
+                      <div className="overflow-hidden rounded-tr-lg rounded-bl-lg">
+                        <img
+                          className="w-full max-h-[300px] object-cover"
+                          src="https://source.unsplash.com/random"
+                          alt="Sunset in the mountains"
+                        />
+                      </div>
+                      <h6 className="text-xl my-2 uppercase text-primary-500">
+                        Developpement // Android
+                      </h6>
+                      <a href="#" className="inline-block text-2xl font-medium">
+                        Lorem, ipsum dolor.
+                      </a>
+                      <p className="text-base text-gray-700">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Voluptatibus quia, nulla! Maiores et perferendis
+                        eaque, exercitationem praesentium nihil.
+                      </p>
+                      <a href="#" className="btn-primary">
+                        Lire plus <FaChevronRight className="inline" />
+                      </a>
+                    </div>
                   ))}
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
+        <WaveSvg className="md:w-full md:block sm:opacity-0 rotate-180 -bottom-2" />
+        <Footer />
       </div>
     </div>
   );
