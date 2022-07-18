@@ -3,11 +3,13 @@ import "./styles.module.css";
 import Logo from "../../../assets/logos/logo1.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
   return (
     <header className="bg-primary-500 fixed top-0 left-0 w-full z-20">
-      {/*  fixed top-0 left-0 w-full z-10 */}
+      {/* sm:border-white sm:border-b-2 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -54,41 +56,61 @@ export default function Navbar() {
           <nav>
             <AnimatePresence>
               <ul className="items-center justify-between pt-4 text-base text-[white] lg:flex lg:pt-0">
-                <li>
+                <motion.li
+                  whileHover={{
+                    scale: 1.08,
+                    transition: { yoyo: Infinity, duration: 0.2 },
+                  }}
+                >
                   <Link href="/">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
                       Acceuil
                     </a>
                   </Link>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li
+                  whileHover={{
+                    scale: 1.08,
+                    transition: { yoyo: Infinity, duration: 0.2 },
+                  }}
+                >
                   <Link href="/services">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
                       Services
                     </a>
                   </Link>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li
+                  whileHover={{
+                    scale: 1.08,
+                    transition: { yoyo: Infinity, duration: 0.2 },
+                  }}
+                >
                   <Link href="/blog">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white]">
+                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
                       Blog
                     </a>
                   </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 hover:border-[white] lg:mb-0">
+                </motion.li>
+                <motion.li
+                  whileHover={{
+                    scale: 1.08,
+                    transition: { yoyo: Infinity, duration: 0.2 },
+                  }}
+                >
+                  <Link href="/about-us">
+                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 lg:mb-0">
                       A propos
                     </a>
                   </Link>
-                </li>
+                </motion.li>
               </ul>
             </AnimatePresence>
           </nav>
           <Link href="#">
             <a className="flex items-center justify-start mb-4 lg:ml-4 lg:mb-0 pointer-cursor">
               <img
-                className="w-10 h-10 border-2 border-transparent rounded-full duration-100 hover:border-[white]"
+                className="w-10 h-10 border-2 border-transparent rounded-full duration-100"
                 src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
                 alt="User avatar"
               />
