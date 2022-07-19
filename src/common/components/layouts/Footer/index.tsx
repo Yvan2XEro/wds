@@ -72,8 +72,8 @@ export default function Footer() {
                   whileHover={{ scaleX: 1.1, originX: -1 }}
                   className="flex mt-3 text-white cursor-pointer items-center"
                 >
-                  <Link href="/services">
-                    <a className="block">Services</a>
+                  <Link href="/about-us">
+                    <a className="block">A propos</a>
                   </Link>
                 </motion.li>
                 <motion.li
