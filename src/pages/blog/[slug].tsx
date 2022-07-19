@@ -8,7 +8,7 @@ function Details() {
   return (
     <div>
       <Head>
-        <title>Developpement d'application android</title>
+        <title>Developpement d&apos;application android</title>
         <meta
           name="description"
           content="Developpement d'application android"

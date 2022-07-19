@@ -72,15 +72,7 @@ export default function Footer() {
                   whileHover={{ scaleX: 1.1, originX: -1 }}
                   className="flex mt-3 text-white cursor-pointer items-center"
                 >
-                  <Link href="#">
-                    <a className="block">Acceuil</a>
-                  </Link>
-                </motion.li>
-                <motion.li
-                  whileHover={{ scaleX: 1.1, originX: -1 }}
-                  className="flex mt-3 text-white cursor-pointer items-center"
-                >
-                  <Link href="#">
+                  <Link href="/services">
                     <a className="block">Services</a>
                   </Link>
                 </motion.li>
@@ -88,7 +80,15 @@ export default function Footer() {
                   whileHover={{ scaleX: 1.1, originX: -1 }}
                   className="flex mt-3 text-white cursor-pointer items-center"
                 >
-                  <Link href="#">
+                  <Link href="/services">
+                    <a className="block">Services</a>
+                  </Link>
+                </motion.li>
+                <motion.li
+                  whileHover={{ scaleX: 1.1, originX: -1 }}
+                  className="flex mt-3 text-white cursor-pointer items-center"
+                >
+                  <Link href="/blog">
                     <a className="block">Blog</a>
                   </Link>
                 </motion.li>
@@ -96,8 +96,8 @@ export default function Footer() {
                   whileHover={{ scaleX: 1.1, originX: -1 }}
                   className="flex mt-3 text-white cursor-pointer items-center"
                 >
-                  <Link href="#">
-                    <a className="block">FAQs</a>
+                  <Link href="/contacts">
+                    <a className="block">Contacts</a>
                   </Link>
                 </motion.li>
               </ul>

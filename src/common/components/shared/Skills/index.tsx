@@ -6,8 +6,8 @@ import Logo from "../../../assets/logos/logo1.png";
 
 function Skills() {
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-20 mb-20">
+    <div className="">
+      <div className="grid grid-cols-1 md:grid-cols-2 mb-20">
         <div className="px-8 md:px-16">
           <img
             src="https://source.unsplash.com/random"

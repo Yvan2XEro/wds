@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
 import Statistcis from "@components/shared/Statistics";
 import Link from "next/link";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -51,9 +52,11 @@ const Home: NextPage = () => {
 
               <div className="flex mt-4">
                 <Link href="/contacts">
-                  <a className="flex items-center justify-center bg-primary-300 text-white px-4 py-2 rounded-lg">
-                    <FaChevronRight className="mr-2" />
-                    <span>Nous contacter</span>
+                  <a className="transition-all flex items-center justify-center bg-primary-300 text-white px-4 py-2 rounded-lg">
+                    <FaChevronRight className="mr-2 transition-all hover:left-1 inline-block" />
+                    <span className="inline-block hover:ml-1 transition-all">
+                      Nous contacter
+                    </span>
                   </a>
                 </Link>
               </div>

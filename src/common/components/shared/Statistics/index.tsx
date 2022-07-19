@@ -1,9 +1,11 @@
 import React from "react";
-import { FaRegSmileBeam } from "react-icons/fa";
+import { FaRegSmileBeam, FaBusinessTime } from "react-icons/fa";
+import { IoMdRocket } from "react-icons/io";
+import { GiRocketFlight, GiPartyPopper } from "react-icons/gi";
 
 function Statistcis() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-5 rounded-none shadow-none">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-20 rounded-none shadow-none">
       <StatisticCard
         count={323}
         icon={<FaRegSmileBeam size={60} className="text-primary-300 mx-auto" />}
@@ -11,18 +13,18 @@ function Statistcis() {
       />
       <StatisticCard
         count={323}
-        icon={<FaRegSmileBeam size={60} className="text-primary-300 mx-auto" />}
+        icon={<GiRocketFlight size={60} className="text-primary-300 mx-auto" />}
+        text="Projets encours"
+      />
+      <StatisticCard
+        count={323}
+        icon={<GiPartyPopper size={60} className="text-primary-300 mx-auto" />}
         text="Projets acheves"
       />
       <StatisticCard
         count={323}
-        icon={<FaRegSmileBeam size={60} className="text-primary-300 mx-auto" />}
-        text="Projets acheves"
-      />
-      <StatisticCard
-        count={323}
-        icon={<FaRegSmileBeam size={60} className="text-primary-300 mx-auto" />}
-        text="Projets acheves"
+        icon={<FaBusinessTime size={60} className="text-primary-300 mx-auto" />}
+        text="Jours de travails"
       />
     </div>
   );

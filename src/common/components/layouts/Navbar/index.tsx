@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.module.css";
 import Logo from "../../../assets/logos/logo1.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function Navbar() {
   const router = useRouter();
+  //add event listener to detect when the user scrolls and change the navbar background color
+  useEffect(() => {
+    // handleNavbarStyleOnScroll();
+  }, []);
+
+  const handleNavbarStyleOnScroll = () => {
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector("#navbar");
+      const logo = document.querySelector("#logo");
+      if (window.scrollY > 100) {
+        navbar?.classList.remove("text-[white]");
+        navbar?.classList.add("bg-white");
+        navbar?.classList.add("text-primary-500");
+        navbar?.classList.add("border-primary-500");
+        navbar?.classList.add("border-b-2");
+      } else {
+        navbar?.classList.add("text-[white]");
+        navbar?.classList.remove("bg-white");
+        navbar?.classList.remove("text-primary-500");
+        navbar?.classList.remove("border-primary-500");
+        navbar?.classList.remove("border-b-2");
+      }
+    });
+  };
+
   return (
-    <header className="bg-primary-500 fixed top-0 left-0 w-full z-20">
+    <header
+      id="navbar"
+      className="bg-primary-500 text-[white] fixed top-0 left-0 w-full z-20"
+    >
       {/* sm:border-white sm:border-b-2 */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -22,7 +51,13 @@ export default function Navbar() {
           className="flex items-center justify-between flex-1"
         >
           <Link href="/">
-            <img src={Logo.src} className="w-[55px] h-[40px] mt-[10px]" />
+            <Image
+              id="logo"
+              src={Logo.src}
+              height={40}
+              width={55}
+              className="w-[55px] h-[40px] mt-[10px]"
+            />
           </Link>
         </motion.div>
 
@@ -34,7 +69,7 @@ export default function Navbar() {
           className="block pointer-cursor lg:hidden"
         >
           <svg
-            className="text-[white] fill-current"
+            className=" fill-current"
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
@@ -55,7 +90,7 @@ export default function Navbar() {
         >
           <nav>
             <AnimatePresence>
-              <ul className="items-center justify-between pt-4 text-base text-[white] lg:flex lg:pt-0">
+              <ul className="items-center justify-between pt-4 text-base  lg:flex lg:pt-0">
                 <motion.li
                   whileHover={{
                     scale: 1.08,
@@ -119,15 +154,6 @@ export default function Navbar() {
               </ul>
             </AnimatePresence>
           </nav>
-          <Link href="#">
-            <a className="flex items-center justify-start mb-4 lg:ml-4 lg:mb-0 pointer-cursor">
-              <img
-                className="w-10 h-10 border-2 border-transparent rounded-full duration-100"
-                src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png?width=400"
-                alt="User avatar"
-              />
-            </a>
-          </Link>
         </motion.div>
       </motion.div>
     </header>
