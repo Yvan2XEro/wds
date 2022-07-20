@@ -13,25 +13,20 @@ import { Service } from "src/common/types";
 
 const text =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate cupiditate cumque quas officia inventore fugit.";
-const SERVICES_DATA: Service[] = [
+export const SERVICES_DATA: Service[] = [
   {
     icon: <CgWebsite size={70} />,
-    title: "Developpement d'applications WEB",
+    title: "Developpement d'applications et sites WEB",
     text,
   },
   {
     icon: <ImMobile size={70} />,
-    title: "Developpement d'applications WEB",
+    title: "Developpement d'applications mobiles",
     text,
   },
   {
     icon: <BiLineChart size={70} />,
     title: "Optimisation SEO",
-    text,
-  },
-  {
-    icon: <BsCardHeading size={70} />,
-    title: "Affiches publicitaires & cartes de visites",
     text,
   },
   {
@@ -42,6 +37,11 @@ const SERVICES_DATA: Service[] = [
   {
     icon: <MdManageAccounts size={70} color="" />,
     title: "Assistance technique",
+    text,
+  },
+  {
+    icon: <BsCardHeading size={70} />,
+    title: "Affiches publicitaires & cartes de visites",
     text,
   },
 ];
