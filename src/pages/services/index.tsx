@@ -45,7 +45,7 @@ const SERVICES_DATA: Service[] = [
     text,
   },
 ];
-function serviceList() {
+export function serviceList() {
   return SERVICES_DATA.map((s) => <ServiceCard {...s} />);
 }
 function services() {
@@ -62,7 +62,7 @@ function services() {
       <div>
         <Header title="Nos services" />
         <section className="px-6 mb-20">
-          <div className="grid px-2 md:px-8 grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 px-2 md:px-8 md:grid-cols-3">
             {serviceList()}
           </div>
         </section>

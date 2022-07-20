@@ -69,7 +69,7 @@ export default function Navbar() {
           className="block pointer-cursor lg:hidden"
         >
           <svg
-            className=" fill-current"
+            className="fill-current "
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
@@ -90,67 +90,42 @@ export default function Navbar() {
         >
           <nav>
             <AnimatePresence>
-              <ul className="items-center justify-between pt-4 text-base  lg:flex lg:pt-0">
-                <motion.li
-                  whileHover={{
-                    scale: 1.08,
-                    transition: { yoyo: Infinity, duration: 0.2 },
-                  }}
-                >
+              <ul className="items-center justify-between text-base sm:pt-4 lg:flex lg:pt-0">
+                <li>
                   <Link href="/">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
                       Acceuil
                     </a>
                   </Link>
-                </motion.li>
-                <motion.li
-                  whileHover={{
-                    scale: 1.08,
-                    transition: { yoyo: Infinity, duration: 0.2 },
-                  }}
-                >
+                </li>
+                <li>
                   <Link href="/services">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
                       Services
                     </a>
                   </Link>
-                </motion.li>
-                <motion.li
-                  whileHover={{
-                    scale: 1.08,
-                    transition: { yoyo: Infinity, duration: 0.2 },
-                  }}
-                >
+                </li>
+                <li>
                   <Link href="/blog">
-                    <a className="block px-0 py-3 border-b-2 border-transparent lg:p-4 duration-100">
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
                       Blog
                     </a>
                   </Link>
-                </motion.li>
-                <motion.li
-                  whileHover={{
-                    scale: 1.08,
-                    transition: { yoyo: Infinity, duration: 0.2 },
-                  }}
-                >
+                </li>
+                <li>
                   <Link href="/about-us">
-                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 lg:mb-0">
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none lg:mb-0">
                       A propos
                     </a>
                   </Link>
-                </motion.li>
-                <motion.li
-                  whileHover={{
-                    scale: 1.08,
-                    transition: { yoyo: Infinity, duration: 0.2 },
-                  }}
-                >
+                </li>
+                <li>
                   <Link href="/contacts">
-                    <a className="block px-0 py-3 mb-2 border-b-2 border-transparent lg:p-4 duration-100 lg:mb-0">
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none lg:mb-0">
                       Contacts
                     </a>
                   </Link>
-                </motion.li>
+                </li>
               </ul>
             </AnimatePresence>
           </nav>

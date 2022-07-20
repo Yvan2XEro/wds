@@ -1,17 +1,24 @@
+import Link from "next/link";
 import React from "react";
+import { FaChevronRight } from "react-icons/fa";
 import { Service } from "src/common/types";
 
 export function ServiceCard({ icon, title, text }: Service) {
   return (
-    <div className="overflow-hidden relative shadow-xl group md:mx-2 p-4 mb-6 transition-colors rounded-lg hover:bg-gradient-to-r from-sky-500 to-indigo-500 hover:text-[white]">
-      {/* hover:bg-gradient-to-r from-sky-500 to-indigo-500 hover:text-[white]  */}
+    <div className="relative p-4 mb-6 transition-all duration-500 rounded-lg shadow-xl group md:mx-2 hover:bg-gradient-to-r from-sky-500 to-indigo-500 hover:text-white">
       <div className="m-3 text-primary-300 group-hover:text-white">{icon}</div>
       <h3 className="text-xl font-bold">{title}</h3>
       <p>{text}</p>
-      {/* <div className="absolute duration-500 transition-all  rounded-[50%] group-hover:-translate-x-[50%] group-hover:-translate-y-[50%] bg-[blue] h-[350px] w-[350px] -right-full -bottom-full -z-[1] top-[50%] group-hover:left-[50%] after:rounded-[50%] group-hover:after:-translate-x-[50%] group-hover:after:-translate-y-[50%] after:absolute after:bg-[red] after:h-[170px] after:w-[170px] after:-right-full after:-bottom-full after:-z-[1] after:top-[50%] group-hover:after:left-[50%]"></div> */}
+      <div className="relative flex mt-2 opacity-70 group-hover:opacity-100">
+        <Link href="#">
+          <a className="relative block p-3 transition-all text-primary-500">
+            <span className="relative flex items-center justify-between p-2 rounded-lg group-hover:space-x-2 group-hover:text-white group-hover:primary-gradient before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-primary-500 before:transition-all before:duration-500 hover:before:w-full hover:before:left-0 hover:before:bg-white before:rounded-xl">
+              <span className="">Decouvrir maintenant</span>
+              <FaChevronRight className="ml-2" />
+            </span>
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
-// before:rounded-[50%] group-hover:before:-translate-x-[50%] group-hover:before:-translate-y-[50%] before:bg-[red] before:h-[350px] before:w-[350px] before:-right-full before:-bottom-full before:-z-[1]
-
-// before:rounded-[50%] group-hover:before:-translate-x-[50%] group-hover:before:-translate-y-[50%] before:absolute before:bg-[red] before:h-[150px] before:w-[150px] before:-right-full before:-bottom-full before:-z-[1] before:top-[50%] group-hover:before:left-[50%]

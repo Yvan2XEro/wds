@@ -7,7 +7,7 @@ import Logo from "../../../assets/logos/logo1.png";
 function Skills() {
   return (
     <div className="">
-      <div className="grid grid-cols-1 md:grid-cols-2 mb-20">
+      <div className="grid grid-cols-1 mb-20 md:grid-cols-2">
         <div className="px-8 md:px-16">
           <img
             src="https://source.unsplash.com/random"
@@ -15,7 +15,7 @@ function Skills() {
           />
         </div>
         <div className="px-8 mt-2">
-          <h6 className="outline-rounded">Nos skils</h6>
+          <h6 className="outline-rounded">Nos compétences</h6>
           <h2 className="text-4xl font-bold">
             Nous avons de bons experiences dans nos domaines de services
           </h2>
@@ -40,8 +40,8 @@ function Skills() {
       </div>
       <div className="px-8 md:px-16 md:flex">
         <div className="mt-10 md:w-[50%]">
-          <h6 className="outline-rounded mb-1">Nos services</h6>
-          <h2 className="text-4xl font-bold mb-2">
+          <h6 className="mb-1 outline-rounded">Nos services</h6>
+          <h2 className="mb-2 text-4xl font-bold">
             Derrière l'histoire de l'agence numérique WDS
           </h2>
           <p>
