@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { ImInstagram } from "react-icons/im";
 
 export function UserCard() {
   return (
@@ -33,7 +32,7 @@ export function UserCard() {
         </div>
         <img
           src="https://gitlab.com/uploads/-/system/user/avatar/6049371/avatar.png"
-          className="rounded-full w-[120px] h-[120px] m-auto"
+          className="rounded-full w-[120px] h-[120px] m-auto primary-gradient"
         />
       </div>
       <h6 className="mt-3 text-xl font-bold text-center">Yvan Jules Kana</h6>

@@ -2,7 +2,7 @@ import React from "react";
 import { InputPropsType } from "./Input";
 
 type SelectPropsType = InputPropsType & {
-  options: Array<{ label: string; value: string }>;
+  options: Array<{ label: string; value: string | number }>;
   id?: string;
   type?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;

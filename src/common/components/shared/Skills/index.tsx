@@ -1,8 +1,7 @@
 import React from "react";
 import Skill from "../Skill";
 import Noconection from "../../../assets/images/no-connection.gif";
-
-import Logo from "../../../assets/logos/logo1.png";
+import { SERVICES_DATA } from "src/pages/services";
 
 function Skills() {
   return (
@@ -20,21 +19,11 @@ function Skills() {
             Nous avons de bons experiences dans nos domaines de services
           </h2>
           <ul>
-            <li className="relative">
-              <Skill percent={90} title="Sites et applications WEBs" />
-            </li>
-            <li className="relative">
-              <Skill percent={90} title="Infographie" />
-            </li>
-            <li className="relative">
-              <Skill percent={90} title="UI/UX Design" />
-            </li>
-            <li className="relative">
-              <Skill percent={90} title="Applications mobiles" />
-            </li>
-            <li className="relative">
-              <Skill percent={90} title="SEO Optimization" />
-            </li>
+            {SERVICES_DATA.map((s) => (
+              <li key={s.id} className="relative">
+                <Skill percent={90} title={s.title} />
+              </li>
+            ))}
           </ul>
         </div>
       </div>

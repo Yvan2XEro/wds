@@ -87,14 +87,14 @@ export default function Footer() {
                 Nos services
               </h2>
               <ul>
-                {SERVICES_DATA.map(({ title }) => (
+                {SERVICES_DATA.map(({ title, id }) => (
                   <li
                     key={title}
                     className="flex items-center mt-3 text-white transition-all cursor-pointer hover:scale-110"
                   >
-                    <a href="#" className="block">
-                      {title}
-                    </a>
+                    <Link href={`/contacts?service=${id}`}>
+                      <a className="block">{title}</a>
+                    </Link>
                   </li>
                 ))}
               </ul>

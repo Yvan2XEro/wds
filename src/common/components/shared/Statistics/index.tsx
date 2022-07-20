@@ -1,7 +1,8 @@
 import React from "react";
 import { FaRegSmileBeam, FaBusinessTime } from "react-icons/fa";
-import { IoMdRocket } from "react-icons/io";
 import { GiRocketFlight, GiPartyPopper } from "react-icons/gi";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 function Statistcis() {
   return (
@@ -42,7 +43,16 @@ const StatisticCard = ({ count, icon, text }: IStatisticCardProps) => {
     <>
       <div className="py-5 text-center card sm:mt-2">
         <h2 className="text-3xl text-primary-300">
-          <span className="text-4xl font-bold">{count}</span>+
+          <span className="text-4xl font-bold" daata-val={count}>
+            <CountUp end={count}>
+              {({ countUpRef, start }) => (
+                <VisibilitySensor onChange={start} delayedCall>
+                  <span ref={countUpRef} />
+                </VisibilitySensor>
+              )}
+            </CountUp>
+          </span>
+          +
         </h2>
         <p className="my-3 text-xl">{text}</p>
         <div className="mx-auto">{icon}</div>

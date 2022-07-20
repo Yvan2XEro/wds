@@ -4,10 +4,20 @@ import { Input, Select } from "@components/shared/Input";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import countries from "../../common/resources/countries.json";
+import { SERVICES_DATA } from "../services";
 
 const Contacts: NextPage = () => {
+  const router = useRouter();
+  const [serviceId, setServiceId] = useState(0);
+  useEffect(() => {
+    if (router.query.service) {
+      setServiceId(parseInt(router.query.service as string));
+    }
+  }, [router.query]);
+
   return (
     <div>
       <Head>
@@ -62,7 +72,7 @@ const Contacts: NextPage = () => {
               />
             </motion.div>
           </div>
-          <ContactForm />
+          <ContactForm selectedService={serviceId} />
         </div>
       </div>
       <Footer />
@@ -72,10 +82,14 @@ const Contacts: NextPage = () => {
 
 export default Contacts;
 
-const ContactForm = () => {
+const ContactForm = ({ selectedService }: { selectedService: number }) => {
   const [country, setCountry] = useState("");
+  const [service, setService] = useState(selectedService);
+  useEffect(() => {
+    setService(selectedService);
+  }, [selectedService]);
   return (
-    <form className="relative container">
+    <form className="container relative">
       <div className="sm:px-8">
         <div className="md:flex md:justify-between">
           <Input
@@ -130,12 +144,18 @@ const ContactForm = () => {
           <Select
             className="md:flex-1 md:w-72"
             label="Type de service"
-            value=""
+            value={service}
             options={[
-              { label: "Web", value: "web" },
-              { label: "Mobile", value: "mobile" },
+              {
+                label: "Selectionner un service...",
+                value: "",
+              },
+              ...SERVICES_DATA.map((s) => ({
+                label: s.title,
+                value: s.id,
+              })),
             ]}
-            onChange={() => {}}
+            onChange={({ target }) => setService(parseInt(target.value))}
           />
         </div>
         <div className="md:flex md:justify-between">

@@ -8,7 +8,6 @@ import Image from "next/image";
 
 export default function Navbar() {
   const router = useRouter();
-  //add event listener to detect when the user scrolls and change the navbar background color
   useEffect(() => {
     // handleNavbarStyleOnScroll();
   }, []);
@@ -86,7 +85,7 @@ export default function Navbar() {
           id="menu"
           initial={{ x: 200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, bounce: 0.2, type: "spring" }}
         >
           <nav>
             <AnimatePresence>

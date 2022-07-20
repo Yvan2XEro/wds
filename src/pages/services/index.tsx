@@ -15,31 +15,37 @@ const text =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate cupiditate cumque quas officia inventore fugit.";
 export const SERVICES_DATA: Service[] = [
   {
+    id: 1,
     icon: <CgWebsite size={70} />,
     title: "Developpement d'applications et sites WEB",
     text,
   },
   {
+    id: 2,
     icon: <ImMobile size={70} />,
     title: "Developpement d'applications mobiles",
     text,
   },
   {
+    id: 3,
     icon: <BiLineChart size={70} />,
     title: "Optimisation SEO",
     text,
   },
   {
+    id: 4,
     icon: <MdDraw size={70} />,
     title: "Designs UI/UX",
     text,
   },
   {
+    id: 5,
     icon: <MdManageAccounts size={70} color="" />,
     title: "Assistance technique",
     text,
   },
   {
+    id: 6,
     icon: <BsCardHeading size={70} />,
     title: "Affiches publicitaires & cartes de visites",
     text,

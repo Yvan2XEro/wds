@@ -4,7 +4,7 @@ export type InputPropsType = {
   id?: string;
   type?: string;
   min?: number;
-  value: string;
+  value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   label: string;
