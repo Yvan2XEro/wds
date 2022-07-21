@@ -17,3 +17,25 @@ export type Work = {
     link: string;
     category: WorkCategory;
 }
+
+export type User = {
+    id?: number;
+    name: string;
+    avatar
+    : string;
+};
+
+export type Testimonial = User & {
+    text: string;
+}
+
+export type UserAbout = User & {
+    bio: string;
+    tags: string[];
+    founder: boolean;
+    socials: {
+        twitter: string;
+        github: string;
+        linkedin: string;
+    }
+}

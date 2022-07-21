@@ -6,6 +6,7 @@ import Colaborators from "../../common/assets/images/collaborators.png";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { Work, WorkCategory } from "src/common/types";
 import Portfolio from "@components/shared/Portfolio";
+import Testimonials from "@components/shared/Testimonials";
 
 function OurWorks({
   works,
@@ -27,12 +28,20 @@ function OurWorks({
         <Header title="Nos traveaux" />
       </div>
       <div className="mx-8">
-        <Approach />
-        <div className="md:mx-16 mt-10">
+        <div className="flex justify-center">
+          <Approach />
+        </div>
+        <div className="md:mx-16 mt-20">
           <h2 className="text-3xl text-center">
             Quelques realisations durant ces derniers annees
           </h2>
           <Portfolio works={works} categories={categories} />
+        </div>
+        <div className="md:mx-16 mt-20">
+          <h2 className="text-3xl text-center">
+            Ce que nos clients pensent de nous
+          </h2>
+          <Testimonials />
         </div>
       </div>
       <Footer />
@@ -113,19 +122,21 @@ const Approach = () => {
     <>
       <div className="md:px-20 md:flex">
         <img
-          className="max-w-[350px]"
+          className="max-w-[350px] block"
           src={Colaborators.src}
           alt="Collaboration image"
         />
-        <div className="px-2 md:max-w-md md:mx-20">
+        <div className="px-2 md:max-w-lg">
           <h2 className="sm:text-center text-4xl md:text-5xl">
             Notre approche
           </h2>
-          <p>
+          <p className="text-xl text-justify">
             <RiDoubleQuotesL />
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad,
-            adipisci? Expedita, consequatur. Ut voluptates minima nam eveniet
-            culpa tempora, nesciunt impedit, natus exercitationem quis quod!
+            <span className="ml-5">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad,
+              adipisci? Expedita, consequatur. Ut voluptates minima nam eveniet
+              culpa tempora, nesciunt impedit, natus exercitationem quis quod!
+            </span>
             <RiDoubleQuotesR className="ml-auto" />
           </p>
         </div>

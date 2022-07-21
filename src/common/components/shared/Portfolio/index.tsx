@@ -1,26 +1,8 @@
 import { Work, WorkCategory } from "src/common/types";
-import Carousel from "react-multi-carousel";
 import { WorkCard } from "../Card";
 import "react-multi-carousel/lib/styles.css";
 import { useCallback, useState } from "react";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
+import AppCarousel from "../AppCarousel";
 
 type PortFolioPropsType = {
   works: Work[];
@@ -39,7 +21,7 @@ const Portfolio = ({ works, categories }: PortFolioPropsType) => {
   }, []);
   return (
     <>
-      <div className="flex justify-end mt-5">
+      <div className="flex justify-end my-10">
         <ul className="flex flex-wrap justify-center">
           <li
             className={`text-xl mx-1  font-bold rounded p-1 px-2 inline-block ${
@@ -69,22 +51,7 @@ const Portfolio = ({ works, categories }: PortFolioPropsType) => {
         </ul>
       </div>
       <div className="cursor-grab w-full">
-        <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          // autoPlaySpeed={1000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
+        <AppCarousel>
           {filteredWorks.map((w) => (
             <WorkCard
               key={w.id + w.label}
@@ -93,7 +60,7 @@ const Portfolio = ({ works, categories }: PortFolioPropsType) => {
               image={w.image}
             />
           ))}
-        </Carousel>
+        </AppCarousel>
       </div>
     </>
   );

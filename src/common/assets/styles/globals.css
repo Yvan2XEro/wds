@@ -24,3 +24,5 @@
  .outline-rounded{
   @apply inline-block p-2 px-3 text-xl uppercase border-2 border-primary-300 text-primary-300 rounded-xl
  }
+
+ 
