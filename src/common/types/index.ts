@@ -5,9 +5,15 @@ export type Service = {
     text: string;
 };
 
+export type WorkCategory = {
+    id: number;
+    label: string;
+};
+
 export type Work = {
     id?: number;
     image: string;
     label: string;
     link: string;
+    category: WorkCategory;
 }

@@ -4,12 +4,16 @@ import Head from "next/head";
 import React from "react";
 import Colaborators from "../../common/assets/images/collaborators.png";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-import Carousel from "react-multi-carousel";
-import Card, { UserCard, WorkCard } from "@components/shared/Card";
-import "react-multi-carousel/lib/styles.css";
-import { Work } from "src/common/types";
+import { Work, WorkCategory } from "src/common/types";
+import Portfolio from "@components/shared/Portfolio";
 
-function OurWorks({ works }: { works: Work[] }) {
+function OurWorks({
+  works,
+  categories,
+}: {
+  works: Work[];
+  categories: WorkCategory[];
+}) {
   return (
     <div>
       <Head>
@@ -24,7 +28,12 @@ function OurWorks({ works }: { works: Work[] }) {
       </div>
       <div className="mx-8">
         <Approach />
-        <Portfolio />
+        <div className="md:mx-16 mt-10">
+          <h2 className="text-3xl text-center">
+            Quelques realisations durant ces derniers annees
+          </h2>
+          <Portfolio works={works} categories={categories} />
+        </div>
       </div>
       <Footer />
     </div>
@@ -33,87 +42,85 @@ function OurWorks({ works }: { works: Work[] }) {
 
 export default OurWorks;
 
-const Portfolio = () => {
-  return (
-    <div className="md:mx-16">
-      <div className="flex justify-end">
-        <ul className="flex flex-wrap justify-center">
-          <li className="text-xl mx-1 text-primary-500 font-bold primary-gradient rounded p-1 px-2 inline-block ">
-            <a href="#">Tout</a>
-          </li>
-          <li className="p-1 px-2 inline-block text-xl mx-1 text-primary-500 font-bold">
-            <a href="#">Sites WEBS</a>
-          </li>
-          <li className="p-1 px-2 inline-block text-xl mx-1 text-primary-500 font-bold">
-            <a href="#">Applications mobiles</a>
-          </li>
-          <li className="p-1 px-2 inline-block text-xl mx-1 text-primary-500 font-bold">
-            <a href="#">Designs UI</a>
-          </li>
-          <li className="p-1 px-2 inline-block text-xl mx-1 text-primary-500 font-bold">
-            <a href="#">DInfographie</a>
-          </li>
-        </ul>
-      </div>
-      <div className="cursor-grab w-full">
-        <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          // autoPlaySpeed={1000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          {works.map((w) => (
-            <WorkCard
-              key={w.id + w.label}
-              label={w.label}
-              link={w.link}
-              image={w.image}
-            />
-          ))}
-        </Carousel>
-      </div>
-    </div>
-  );
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      works: [
+        {
+          id: 1,
+          link: "https://eparchemin.com",
+          label: "Plateforme ADEFTO",
+          image,
+          category: {
+            id: 1,
+            label: "Web",
+          },
+        },
+        {
+          id: 1,
+          link: "https://eparchemin.com",
+          label: "Plateforme ADEFTO",
+          image,
+          category: categories[0],
+        },
+        {
+          id: 1,
+          link: "https://eparchemin.com",
+          label: "Plateforme ADEFTO",
+          image,
+          category: categories[1],
+        },
+        {
+          id: 1,
+          link: "https://eparchemin.com",
+          label: "Plateforme ADEFTO",
+          image,
+          category: categories[2],
+        },
+      ],
+      categories,
+    },
+  };
 };
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3, // optional, default to 1.
+const categories = [
+  {
+    id: 1,
+    label: "Sites Web",
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+  {
+    id: 2,
+    label: "Applications Mobile",
   },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+  {
+    id: 3,
+    label: "Designs UI/UX",
   },
-};
+  {
+    id: 4,
+    label: "Logiciels PC",
+  },
+  {
+    id: 5,
+    label: "Infographie",
+  },
+];
+
+const image =
+  "https://firebasestorage.googleapis.com/v0/b/ero-coding-space.appspot.com/o/projects%2Feparchemin%2FScreenshot_20211106_234158-1.png?alt=media&token=2ab87b21-eb2f-46aa-b9e2-917227fa55a0";
 
 const Approach = () => {
   return (
-    <div className="">
+    <>
       <div className="md:px-20 md:flex">
         <img
           className="max-w-[350px]"
           src={Colaborators.src}
           alt="Collaboration image"
         />
-        <div className="px-2">
-          <h2 className="text-center text-3xl">Notre approche</h2>
+        <div className="px-2 md:max-w-md md:mx-20">
+          <h2 className="sm:text-center text-4xl md:text-5xl">
+            Notre approche
+          </h2>
           <p>
             <RiDoubleQuotesL />
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad,
@@ -123,6 +130,6 @@ const Approach = () => {
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,7 +1,9 @@
 import React from "react";
 import { Work } from "src/common/types";
+import { FiExternalLink } from "react-icons/fi";
+import { RiExternalLinkLine } from "react-icons/ri";
 
-export function WorkCard({ image, link, label }: Work) {
+export function WorkCard({ image, link, label }: Omit<Work, "category">) {
   return (
     <div className="max-h-[350px] mx-2 rounded card overflow-hidden group m-5">
       <img
@@ -9,13 +11,10 @@ export function WorkCard({ image, link, label }: Work) {
         className="w-full transition-all hover:scale-105 object-cover"
         alt="Sunset in the mountains"
       />
-      <p className="absolute opacity-0 w-full group-hover:opacity-100 bg-opacity-70 bg-white left-0 p-6 bottom-5">
-        <a
-          href={link}
-          target="blanck"
-          className="hover:underline font-bold text-primary-500"
-        >
-          {label}
+      <p className="w-full text-center my-2 text-xl">
+        <a href={link} target="blanck" className="flex">
+          <span className="block mt-[2px]">{label}</span>
+          <RiExternalLinkLine size={25} className="block ml-1" />
         </a>
       </p>
     </div>
