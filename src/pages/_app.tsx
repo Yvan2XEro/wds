@@ -1,4 +1,3 @@
-// import "https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css";
 import "../common/assets/styles/globals.css";
 import "nprogress/nprogress.css";
 import type { AppProps } from "next/app";
