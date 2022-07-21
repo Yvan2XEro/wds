@@ -2,6 +2,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { slugify } from "src/common/utils";
+
+// article blog object
+const a = {
+  title: "Developement avec React et Next.js",
+  text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+        nihil`,
+  id: "1",
+  category: "Developpement web",
+};
 
 export function ArticleBlog() {
   return (
@@ -14,18 +25,12 @@ export function ArticleBlog() {
           alt="Sunset in the mountains"
         />
       </div>
-      <h6 className="text-xl my-2 uppercase text-primary-500">
-        Developpement // Android
-      </h6>
+      <h6 className="my-2 text-xl uppercase text-primary-500">{a.category}</h6>
       <Link href="/blog/developpement-android-react-native">
-        <a className="inline-block text-2xl font-medium">Lorem, ipsum dolor.</a>
+        <a className="inline-block text-2xl font-medium">{a.title}</a>
       </Link>
-      <p className="text-base text-gray-700">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
-      </p>
-      <Link href="/blog/developpement-android-react-native">
+      <p className="text-base text-gray-700">{a.text}</p>
+      <Link href={`/blog/${slugify(a.title)}-${a.id}`}>
         <a>
           <motion.span
             whileHover={{

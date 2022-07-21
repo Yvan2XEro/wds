@@ -7,7 +7,7 @@ export default function DeatilsService() {
   return (
     <div>
       <Head>
-        <title>developpement d'application mobiles</title>
+        <title>developpement d&apos;application mobiles</title>
         <meta
           name="description"
           content="developpement d'application mobiles"
@@ -17,7 +17,7 @@ export default function DeatilsService() {
       <div>
         <Navbar />
         <main>
-          <h1 className="text-5xl">developpement d'application mobiles</h1>
+          <h1 className="text-5xl">developpement d&apos;application mobiles</h1>
         </main>
         <Footer />
       </div>

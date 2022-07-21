@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
 import Statistcis from "@components/shared/Statistics";
 import Link from "next/link";
+import Image from "next/image";
+import { serviceList } from "./services";
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +24,7 @@ const Home: NextPage = () => {
 
       <div className="relative">
         <Navbar />
-        <div className="bg-primary-500  w-full">
+        <div className="w-full bg-primary-500">
           <div className="w-full items-center h-full px-4 mx-auto flex flex-wrap mt-[55px]">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
@@ -51,16 +53,18 @@ const Home: NextPage = () => {
 
               <div className="flex mt-4">
                 <Link href="/contacts">
-                  <a className="flex items-center justify-center bg-primary-300 text-white px-4 py-2 rounded-lg">
-                    <FaChevronRight className="mr-2" />
-                    <span>Nous contacter</span>
+                  <a className="flex items-center justify-center px-4 py-2 text-white transition-all rounded-lg bg-primary-300">
+                    <FaChevronRight className="inline-block mr-2 transition-all hover:left-1" />
+                    <span className="inline-block transition-all hover:ml-1">
+                      Nous contacter
+                    </span>
                   </a>
                 </Link>
               </div>
             </motion.div>
           </div>
         </div>
-        <WaveSvg className="min-w-full block" />
+        <WaveSvg className="block min-w-full" />
         <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
           <section className=" md:mt-10">
             <div className="max-w-lg md:mx-3">
@@ -73,9 +77,7 @@ const Home: NextPage = () => {
             </div>
             <div className="px-2 mt-20">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <Card />
-                <Card />
-                <Card />
+                {serviceList()}
               </div>
               <div className="mt-32">
                 <AboutUs withMore={true} />

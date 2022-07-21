@@ -1,13 +1,59 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../../common/components/layouts/Navbar";
 import Footer from "../../common/components/layouts/Footer";
-import WaveSvg from "../../common/assets/svg/wave.svg";
-import { motion } from "framer-motion";
-import Card from "@components/shared/Card";
+import { ServiceCard } from "@components/shared/Card";
 import Skills from "@components/shared/Skills";
 import Header from "@components/shared/Header";
+import { CgWebsite } from "react-icons/cg";
+import { ImMobile } from "react-icons/im";
+import { BiLineChart } from "react-icons/bi";
+import { BsCardHeading } from "react-icons/bs";
+import { MdDraw, MdManageAccounts } from "react-icons/md";
+import { Service } from "src/common/types";
 
+const text =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate cupiditate cumque quas officia inventore fugit.";
+export const SERVICES_DATA: Service[] = [
+  {
+    id: 1,
+    icon: <CgWebsite size={70} />,
+    title: "Developpement d'applications et sites WEB",
+    text,
+  },
+  {
+    id: 2,
+    icon: <ImMobile size={70} />,
+    title: "Developpement d'applications mobiles",
+    text,
+  },
+  {
+    id: 3,
+    icon: <BiLineChart size={70} />,
+    title: "Optimisation SEO",
+    text,
+  },
+  {
+    id: 4,
+    icon: <MdDraw size={70} />,
+    title: "Designs UI/UX",
+    text,
+  },
+  {
+    id: 5,
+    icon: <MdManageAccounts size={70} color="" />,
+    title: "Assistance technique",
+    text,
+  },
+  {
+    id: 6,
+    icon: <BsCardHeading size={70} />,
+    title: "Affiches publicitaires & cartes de visites",
+    text,
+  },
+];
+export function serviceList() {
+  return SERVICES_DATA.map((s) => <ServiceCard {...s} />);
+}
 function services() {
   return (
     <div>
@@ -21,13 +67,9 @@ function services() {
       </Head>
       <div>
         <Header title="Nos services" />
-        <section className="px-6">
-          <div className="grid px-2 md:px-8 grid-cols-1 md:grid-cols-3">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+        <section className="px-6 mb-20">
+          <div className="grid grid-cols-1 px-2 md:px-8 md:grid-cols-3">
+            {serviceList()}
           </div>
         </section>
         <Skills />
