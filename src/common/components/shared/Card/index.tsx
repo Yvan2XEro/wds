@@ -6,4 +6,6 @@ export { ServiceCard } from "./ServiceCard";
 
 export { UserCard } from "./UserCard";
 
+export { WorkCard } from "./WorkCard";
+
 export default Card;

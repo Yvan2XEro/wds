@@ -72,7 +72,9 @@ function services() {
             {serviceList()}
           </div>
         </section>
-        <Skills />
+        <div className="md:mr-8">
+          <Skills />
+        </div>
       </div>
       <Footer />
     </div>

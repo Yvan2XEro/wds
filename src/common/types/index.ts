@@ -4,3 +4,10 @@ export type Service = {
     title: string;
     text: string;
 };
+
+export type Work = {
+    id?: number;
+    image: string;
+    label: string;
+    link: string;
+}

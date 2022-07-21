@@ -8,8 +8,8 @@ import WaveSvg from "../../../assets/svg/wave.svg";
 
 export default function Footer() {
   return (
-    <>
-      <WaveSvg className="block w-full rotate-180 -bottom-4" />
+    <div className="relative mt-[150px]">
+      <WaveSvg className="border-primary-500 mt-1 left-0 block w-full rotate-180 -z-10" />
       <footer className="px-6 py-8 bg-primary-500 lg:px-16 lg:py-0">
         <div className="py-8">
           <div className="flex items-center justify-between flex-1">
@@ -103,7 +103,7 @@ export default function Footer() {
           <Copyrigth />
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 const Copyrigth = () => {

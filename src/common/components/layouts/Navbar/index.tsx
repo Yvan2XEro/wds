@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "./styles.module.css";
 import Logo from "../../../assets/logos/logo1.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { links } from "./links";
 
 export default function Navbar() {
   const router = useRouter();
@@ -90,41 +90,15 @@ export default function Navbar() {
           <nav>
             <AnimatePresence>
               <ul className="items-center justify-between text-base sm:pt-4 lg:flex lg:pt-0">
-                <li>
-                  <Link href="/">
-                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
-                      Acceuil
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services">
-                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
-                      Services
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog">
-                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
-                      Blog
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about-us">
-                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none lg:mb-0">
-                      A propos
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contacts">
-                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none lg:mb-0">
-                      Contacts
-                    </a>
-                  </Link>
-                </li>
+                {links.map((l) => (
+                  <li key={l.to}>
+                    <Link href={l.to}>
+                      <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
+                        {l.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </AnimatePresence>
           </nav>

@@ -12,6 +12,7 @@ import Statistcis from "@components/shared/Statistics";
 import Link from "next/link";
 import Image from "next/image";
 import { serviceList } from "./services";
+import { CgMail } from "react-icons/cg";
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
       <div className="relative">
         <Navbar />
         <div className="w-full bg-primary-500">
-          <div className="w-full items-center h-full px-4 mx-auto flex flex-wrap mt-[55px]">
+          <div className="w-full items-center h-full px-8 md:px-16 mx-auto flex flex-wrap mt-[55px]">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -54,7 +55,10 @@ const Home: NextPage = () => {
               <div className="flex mt-4">
                 <Link href="/contacts">
                   <a className="flex items-center justify-center px-4 py-2 text-white transition-all rounded-lg bg-primary-300">
-                    <FaChevronRight className="inline-block mr-2 transition-all hover:left-1" />
+                    <CgMail
+                      size={20}
+                      className="inline-block mr-2 transition-all hover:left-1"
+                    />
                     <span className="inline-block transition-all hover:ml-1">
                       Nous contacter
                     </span>
@@ -65,8 +69,8 @@ const Home: NextPage = () => {
           </div>
         </div>
         <WaveSvg className="block min-w-full" />
-        <div className="flex items-center justify-center px-6 py-2 mx-auto lg:px-16 lg:py-0">
-          <section className=" md:mt-10">
+        <div className="flex items-center justify-center px-6 mx-auto lg:px-16 lg:py-0">
+          <section className="">
             <div className="max-w-lg md:mx-3">
               <h2 className="text-4xl font-bold">Nos services</h2>
               <p>

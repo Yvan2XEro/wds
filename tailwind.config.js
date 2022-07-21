@@ -23,6 +23,23 @@ module.exports = {
         'primary-500': '#211d58',
         'pink': '#e432a2',
       },
+      keyframes: {
+        wave: {
+          '0%': {
+            transform: 'rotate(0.0deg) translateY(0px)'
+          },
+          '10%': { transform: 'rotate(14deg) translateY(10px) translateX(8px)' },
+          '20%': { transform: 'rotate(-8deg) translateY(-5px) translateX(12px)' },
+          '30%': { transform: 'rotate(14deg) translateY(3px) translateX(4px)' },
+          '40%': { transform: 'rotate(-4deg) translateY(-10px) translateX(-3px)' },
+          '50%': { transform: 'rotate(10.0deg) translateY(-10px) translateX(-3px)' },
+          '60%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
+        },
+      },
+      animation: {
+        'waving-hand': 'wave 10s linear infinite',
+      },
     },
     screens: {
       ...defaultTheme.screens,
@@ -30,4 +47,6 @@ module.exports = {
     }
   },
   plugins: [],
+
+
 }
