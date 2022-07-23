@@ -2,35 +2,32 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
-import { slugify } from "src/common/utils";
+import { Post } from "src/common/types";
+import { slugify, substring } from "src/common/utils";
 
-// article blog object
-const a = {
-  title: "Developement avec React et Next.js",
-  text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil`,
-  id: "1",
-  category: "Developpement web",
+type ArticleBlogPropsType = {
+  data: Post;
 };
 
-export function ArticleBlog() {
+export function ArticleBlog({ data }: ArticleBlogPropsType) {
   return (
     <div className="min-h-[400px] mx-2 pb-1 card mt-7">
       <div className="overflow-hidden rounded-tr-lg rounded-bl-lg">
         <motion.img
           whileHover={{ scaleX: 1.1 }}
           className="w-full max-h-[300px] object-cover"
-          src="https://source.unsplash.com/random"
+          src={data.image}
           alt="Sunset in the mountains"
         />
       </div>
-      <h6 className="my-2 text-xl uppercase text-primary-500">{a.category}</h6>
+      <h6 className="my-2 text-xl uppercase text-primary-500">
+        {data.category.label}
+      </h6>
       <Link href="/blog/developpement-android-react-native">
-        <a className="inline-block text-2xl font-medium">{a.title}</a>
+        <a className="inline-block text-2xl font-medium">{data.title}</a>
       </Link>
-      <p className="text-base text-gray-700">{a.text}</p>
-      <Link href={`/blog/${slugify(a.title)}-${a.id}`}>
+      <p className="text-base text-gray-700">{substring(data.text, 300)}</p>
+      <Link href={`/blog/${slugify(data.title)}-${data.id}`}>
         <a>
           <motion.span
             whileHover={{

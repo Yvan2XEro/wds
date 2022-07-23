@@ -1,1 +1,1 @@
-export { slugify } from "./strings"
+export { slugify, substring } from "./strings"

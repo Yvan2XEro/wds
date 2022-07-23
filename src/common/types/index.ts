@@ -39,3 +39,15 @@ export type UserAbout = User & {
         linkedin: string;
     }
 }
+
+export type PostCategory = WorkCategory
+
+export type Post = {
+    id?: number;
+    title: string;
+    image: string;
+    text: string;
+    createdAt: Date;
+    author: User;
+    category: PostCategory
+}

@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../common/components/layouts/Navbar";
 import HomeSvg from "../common/assets/svg/homebg.svg";
+import Bg2 from "../common/assets/images/Animated.gif";
+import Bg1 from "../common/assets/images/Animatedd.gif";
 import WaveSvg from "../common/assets/svg/wave.svg";
 import Card, { ArticleBlog } from "@components/shared/Card";
 import AboutUs from "@components/shared/AboutUs";
@@ -13,6 +15,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { serviceList } from "./services";
 import { CgMail } from "react-icons/cg";
+import { useFetch } from "src/common/hooks";
+import { Post } from "src/common/types";
+import { useEffect, useState } from "react";
+import Spinner from "@components/shared/Spinner";
 
 const Home: NextPage = () => {
   return (
@@ -29,25 +35,26 @@ const Home: NextPage = () => {
       <div className="relative">
         <Navbar />
         <div className="w-full bg-primary-500">
-          <div className="w-full items-center h-full px-8 md:px-16 mx-auto flex flex-wrap mt-[55px]">
+          <div className="w-full items-center h-full px-8 md:px-16 mx-auto flex flex-wrap pt-5 mt-[55px]">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
               className="md:flex-1 md:w-52 sm:mx-auto"
             >
-              <HomeSvg className="w-full" />
+              {/* <HomeSvg className="w-full" /> */}
+              <img src={Bg2.src} className="w-full" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="ml-10 md:flex-1 md:w-52 sm:mx-auto sm:mt-10"
+              className="ml-10 md:flex-1 md:w-52 md:pl-3 sm:mx-auto sm:mt-10"
             >
               <h1 className="text-5xl font-bold text-white ">
                 WEB AND DIGITAL SERVCES ANGENCY
               </h1>
-              <p className="mt-1 text-white">
+              <p className="mt-1 ml-2 text-white">
                 Vous voulez une application WEB ou mobile pour votre structure?
                 Vous avez besoin des affiches publicitaires pour votre
                 entreprise? Vous desirez une assistance technique dans vos
@@ -57,12 +64,12 @@ const Home: NextPage = () => {
 
               <div className="flex mt-4">
                 <Link href="/contacts">
-                  <a className="flex items-center justify-center px-4 py-2 text-white transition-all rounded-lg bg-primary-300">
+                  <a className="flex items-center justify-center px-4 py-2 text-white transition-all rounded-full bg-primary-300">
                     <CgMail
-                      size={20}
+                      size={35}
                       className="inline-block mr-2 transition-all hover:left-1"
                     />
-                    <span className="inline-block transition-all hover:ml-1">
+                    <span className="font-bold inline-block transition-all hover:ml-1">
                       Nous contacter
                     </span>
                   </a>
@@ -91,11 +98,7 @@ const Home: NextPage = () => {
               <Statistcis />
               <div className="mt-20">
                 <h2 className="text-4xl font-bold">Nouveautes sur le blog</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  {[1, 2, 3, 4].map((e) => (
-                    <ArticleBlog key={e} />
-                  ))}
-                </div>
+                <Articles />
               </div>
             </div>
           </section>
@@ -107,3 +110,42 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+const Articles = () => {
+  const {
+    loading,
+    error,
+    data: articles,
+  } = useFetch<{ title: string; body: string; id: number }[]>(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+  const [posts, setPosts] = useState<Post[]>([]);
+  useEffect(() => {
+    if (articles)
+      setPosts(
+        articles?.map((a, id) => ({
+          id: a.id,
+          title: a.title,
+          text: a.body,
+          createdAt: new Date(),
+          author: {
+            avatar: "https://i.pravatar.cc/300",
+            name: "John Doe",
+          },
+          image: Bg1.src,
+          category: {
+            id,
+            label: "Développement",
+          },
+        }))
+      );
+  }, []);
+  if (loading) return <Spinner className="pt-8" />;
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2">
+      {posts.map((a) => (
+        <ArticleBlog key={a.title} data={a} />
+      ))}
+    </div>
+  );
+};
