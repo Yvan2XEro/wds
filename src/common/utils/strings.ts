@@ -1,4 +1,7 @@
-export function slugify(str: string) {
+
+const ID_SLUD_SEPARATOR = '-_';
+
+export function slugify(str: string, id: any): string {
     str = str.replace(/^\s+|\s+$/g, ''); // trim
     str = str.toLowerCase();
 
@@ -13,7 +16,12 @@ export function slugify(str: string) {
         .replace(/\s+/g, '-') // collapse whitespace and replace by -
         .replace(/-+/g, '-'); // collapse dashes
 
-    return str;
+    return str + ID_SLUD_SEPARATOR + id;
+}
+
+export function getIdFromSlug(slug: string): any {
+    const parts = slug.split(ID_SLUD_SEPARATOR);
+    return parseInt(parts[parts.length - 1]);
 }
 
 export function substring(str: string, length: number) {

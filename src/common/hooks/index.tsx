@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 export function useFetch<T>(
   url: string,
   http = axios
-): { data: T | null; loading: boolean; error: any } {
-  const [data, setData] = useState<T | null>(null);
+): { data: any | null; loading: boolean; error: any } {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   useEffect(() => {

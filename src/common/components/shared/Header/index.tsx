@@ -15,7 +15,7 @@ function Header({ title }: HeaderPropsType) {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mt-[50px] text-center text-white text-7xl "
+          className="mt-[50px] text-center md:px-32 text-white text-7xl "
         >
           {title}
         </motion.h1>

@@ -7,7 +7,6 @@ import Bg1 from "../common/assets/images/Animatedd.gif";
 import WaveSvg from "../common/assets/svg/wave.svg";
 import Card, { ArticleBlog } from "@components/shared/Card";
 import AboutUs from "@components/shared/AboutUs";
-import { FaChevronRight, FaRegSmileBeam } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
 import Statistcis from "@components/shared/Statistics";
@@ -19,6 +18,8 @@ import { useFetch } from "src/common/hooks";
 import { Post } from "src/common/types";
 import { useEffect, useState } from "react";
 import Spinner from "@components/shared/Spinner";
+import { postsUrl } from "src/common/utils";
+import { dataToPost } from "src/common/utils/dataToModels";
 
 const Home: NextPage = () => {
   return (
@@ -69,7 +70,7 @@ const Home: NextPage = () => {
                       size={35}
                       className="inline-block mr-2 transition-all hover:left-1"
                     />
-                    <span className="font-bold inline-block transition-all hover:ml-1">
+                    <span className="inline-block font-bold transition-all hover:ml-1">
                       Nous contacter
                     </span>
                   </a>
@@ -112,34 +113,11 @@ const Home: NextPage = () => {
 export default Home;
 
 const Articles = () => {
-  const {
-    loading,
-    error,
-    data: articles,
-  } = useFetch<{ title: string; body: string; id: number }[]>(
-    "https://jsonplaceholder.typicode.com/posts"
-  );
+  const { loading, error, data } = useFetch(postsUrl("&limit=6"), undefined);
   const [posts, setPosts] = useState<Post[]>([]);
   useEffect(() => {
-    if (articles)
-      setPosts(
-        articles?.map((a, id) => ({
-          id: a.id,
-          title: a.title,
-          text: a.body,
-          createdAt: new Date(),
-          author: {
-            avatar: "https://i.pravatar.cc/300",
-            name: "John Doe",
-          },
-          image: Bg1.src,
-          category: {
-            id,
-            label: "Développement",
-          },
-        }))
-      );
-  }, []);
+    if (data) setPosts(data.data?.map(dataToPost));
+  }, [data]);
   if (loading) return <Spinner className="pt-8" />;
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">

@@ -46,7 +46,7 @@ module.exports = {
       'sm': { 'max': '790px' },
     }
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 
 
 }
