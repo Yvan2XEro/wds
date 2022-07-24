@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import ReactMarkdown from "react-markdown";
 import { Post } from "src/common/types";
 import { asset, slugify, substring } from "src/common/utils";
 
@@ -27,7 +28,9 @@ export function ArticleBlog({ data }: ArticleBlogPropsType) {
       <Link href={url}>
         <a className="inline-block text-2xl font-medium">{data.title}</a>
       </Link>
-      <p className="text-base text-gray-700">{substring(data.text, 300)}</p>
+      <p className="text-base text-gray-700">
+        <ReactMarkdown>{substring(data.text, 300)}</ReactMarkdown>
+      </p>
       <Link href={url}>
         <a>
           <motion.span

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useMemo } from "react";
 import { FaMapMarkerAlt, FaPhone, FaVoicemail } from "react-icons/fa";
 import { SERVICES_DATA } from "src/pages/services";
-import Logo from "../../../assets/logos/logo1.png";
+import Logo from "../../../assets/logos/logo.png";
 import WaveSvg from "../../../assets/svg/wave.svg";
 
 export default function Footer() {

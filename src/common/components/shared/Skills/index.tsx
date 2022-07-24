@@ -31,7 +31,7 @@ function Skills() {
         <div className="mt-10 md:w-[50%]">
           <h6 className="mb-1 outline-rounded">Nos services</h6>
           <h2 className="mb-2 text-4xl font-bold">
-            Derrière l'histoire de l'agence numérique WDS
+            Derrière l&apos;histoire de l&apos;agence numérique WDS
           </h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo

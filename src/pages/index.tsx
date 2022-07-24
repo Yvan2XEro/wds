@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../common/components/layouts/Navbar";
 import HomeSvg from "../common/assets/svg/homebg.svg";
-import Bg2 from "../common/assets/images/Animated.gif";
+import Bg2 from "../common/assets/images/bg.jpg";
 import Bg1 from "../common/assets/images/Animatedd.gif";
 import WaveSvg from "../common/assets/svg/wave.svg";
 import Card, { ArticleBlog } from "@components/shared/Card";
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>WDS| l'agence de service web et digitale</title>
+        <title>WDS| l&apos;agence de service web et digitale</title>
         <meta
           name="description"
           content="agence de service web et digitale  spéclialisé dans le dévelopement d'application mobiles et web, nous realisons aussi des affiches publicitaires et vous proposons des services de qualité."
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
               transition={{ duration: 0.5 }}
               className="ml-10 md:flex-1 md:w-52 md:pl-3 sm:mx-auto sm:mt-10"
             >
-              <h1 className="text-5xl font-bold text-white ">
+              <h1 className="text-5xl text-white ">
                 WEB AND DIGITAL SERVCES ANGENCY
               </h1>
               <p className="mt-1 ml-2 text-white">
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
               </div>
               <Statistcis />
               <div className="mt-20">
-                <h2 className="text-4xl font-bold">Nouveautes sur le blog</h2>
+                <h2 className="text-4xl font-bold">Nouveautés sur le blog</h2>
                 <Articles />
               </div>
             </div>

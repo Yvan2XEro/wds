@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Logo from "../../../assets/logos/logo1.png";
+import Logo from "../../../assets/logos/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";

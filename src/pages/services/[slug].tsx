@@ -1,9 +1,10 @@
 import Footer from "@components/layouts/Footer";
 import Navbar from "@components/layouts/Navbar";
+import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 
-export default function DeatilsService() {
+const DeatilsService: NextPage = () => {
   return (
     <div>
       <Head>
@@ -23,4 +24,5 @@ export default function DeatilsService() {
       </div>
     </div>
   );
-}
+};
+export default DeatilsService;

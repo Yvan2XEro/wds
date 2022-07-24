@@ -25,6 +25,12 @@ function About({ users }: { users: UserAbout[] }) {
         <div className="flex justify-center w-full mx-auto">
           <div>
             <h2 className="text-4xl font-bold text-center">Fondateurs</h2>
+            <p className="max-w-sm text-center mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              odio voluptatum quod rem consequatur, aliquam repellendus
+              expedita. Commodi inventore dolore aliquid, aliquam corrupti
+              tenetur esse!
+            </p>
             <div className="grid grid-cols-1 mt-5 md:grid-cols-3">
               {users
                 .filter((u) => u.founder)
@@ -44,6 +50,12 @@ function About({ users }: { users: UserAbout[] }) {
         <div className="flex justify-center w-full mx-auto mt-32">
           <div>
             <h2 className="text-4xl font-bold text-center">Equipe</h2>
+            <p className="max-w-sm text-center mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              odio voluptatum quod rem consequatur, aliquam repellendus
+              expedita. Commodi inventore dolore aliquid, aliquam corrupti
+              tenetur esse!
+            </p>
             <div className="grid grid-cols-1 mt-5 md:grid-cols-3">
               {users
                 .filter((u) => !u.founder)
@@ -51,6 +63,7 @@ function About({ users }: { users: UserAbout[] }) {
                   <UserCard
                     avatar={u.avatar}
                     name={u.name}
+                    key={u.id}
                     text={u.bio}
                     tags={u.tags}
                     socials={u.socials}

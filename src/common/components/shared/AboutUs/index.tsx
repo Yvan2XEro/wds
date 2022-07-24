@@ -24,8 +24,8 @@ export default function AboutUs({ withMore = true }: AboutUsPropsType) {
         <p className="mt-3">
           Nous sommes une équipe de professionnels, nous combinons nos
           expériences et nos connaissances pour vous mettre en place des
-          applications et d'autres stratégies pour faire placer votre entreprise
-          aux yeux du monde.
+          applications et d&apos;autres stratégies pour faire placer votre
+          entreprise aux yeux du monde.
         </p>
         <ul role="list" className="mt-5">
           <li className="mt-1 before:border-cyan-900">

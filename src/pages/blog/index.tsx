@@ -3,10 +3,9 @@ import React from "react";
 import Footer from "@components/layouts/Footer";
 import { ArticleBlog } from "@components/shared/Card";
 import Header from "@components/shared/Header";
-import { useFetch } from "src/common/hooks";
 import { Post } from "src/common/types";
 import axios from "axios";
-import { asset, postsUrl } from "src/common/utils";
+import { postsUrl } from "src/common/utils";
 import { dataToPost } from "src/common/utils/dataToModels";
 
 function Blog({ posts }: { posts: Post[] }) {
@@ -35,12 +34,10 @@ function Blog({ posts }: { posts: Post[] }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get(postsUrl());
-  const data = response.data.data;
-
+  const { data } = await fetch(postsUrl()).then((res) => res.json());
   return {
     props: {
-      posts: data?.map(dataToPost),
+      posts: data?.map(dataToPost) || [],
     },
   };
 }

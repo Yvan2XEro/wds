@@ -12,7 +12,7 @@ const ContactForm = ({ selectedService }: { selectedService: number }) => {
   return (
     <form className="container relative">
       <div className="sm:px-8">
-        <h2>Dites nous en quoi est ce qu'on peut vous aider</h2>
+        <h2>Dites nous en quoi est ce qu&apos;on peut vous aider</h2>
         <div className="md:flex md:justify-between">
           <Input
             label="Nom"

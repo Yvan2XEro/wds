@@ -52,7 +52,7 @@ export const SERVICES_DATA: Service[] = [
   },
 ];
 export function serviceList() {
-  return SERVICES_DATA.map((s) => <ServiceCard {...s} />);
+  return SERVICES_DATA.map((s) => <ServiceCard key={s.title} {...s} />);
 }
 function services() {
   return (
