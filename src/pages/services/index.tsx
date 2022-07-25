@@ -10,6 +10,8 @@ import { BiLineChart } from "react-icons/bi";
 import { BsCardHeading } from "react-icons/bs";
 import { MdDraw, MdManageAccounts } from "react-icons/md";
 import { Service } from "src/common/types";
+import Socials from "@components/shared/Socials";
+import Noconection from "../../common/assets/images/no-connection.gif";
 
 const text =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate cupiditate cumque quas officia inventore fugit.";
@@ -67,6 +69,34 @@ function services() {
       </Head>
       <div>
         <Header title="Nos services" />
+
+        <div className="px-8 md:px-16 ">
+          <div className="md:flex">
+            <div className="mt-10 md:w-[50%]">
+              <h6 className="mb-1 outline-rounded">Nos services</h6>
+              <h2 className="mb-2 text-4xl font-bold">
+                Derrière l&apos;histoire de l&apos;agence numérique WDS
+              </h2>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
+                debitis nesciunt, recusandae quos nam optio, magni doloremque
+                dignissimos, inventore hic eum aspernatur ab. Consequuntur,
+                laborum commodi. Similique ipsam laudantium laborum blanditiis
+                iure sit officia quam tenetur voluptatem iste. Modi,
+                quia.Consequuntur, laborum commodi. Similique ipsam laudantium
+                laborum blanditiis iure sit officia quam tenetur voluptatem
+                iste. Modi, quia.
+              </p>
+            </div>
+            <div className="">
+              <img
+                src={Noconection.src}
+                alt="Image no connection"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
         <section className="px-6 mb-20">
           <div className="grid grid-cols-1 px-2 md:px-8 md:grid-cols-3">
             {serviceList()}

@@ -50,13 +50,15 @@ export default function Navbar() {
           className="flex items-center justify-between flex-1"
         >
           <Link href="/">
-            <Image
-              id="logo"
-              src={Logo.src}
-              height={40}
-              width={55}
-              className="w-[55px] h-[40px] mt-[10px]"
-            />
+            <a className="mt-1">
+              <Image
+                id="logo"
+                src={Logo.src}
+                height={40}
+                width={55}
+                className="w-[55px] h-[40px] mt-[10px]"
+              />
+            </a>
           </Link>
         </motion.div>
 
@@ -88,19 +90,17 @@ export default function Navbar() {
           transition={{ duration: 0.5, bounce: 0.2, type: "spring" }}
         >
           <nav>
-            <AnimatePresence>
-              <ul className="items-center justify-between text-base sm:pt-4 lg:flex lg:pt-0">
-                {links.map((l) => (
-                  <li key={l.to}>
-                    <Link href={l.to}>
-                      <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
-                        {l.label}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </AnimatePresence>
+            <ul className="items-center justify-between text-base sm:pt-4 lg:flex lg:pt-0">
+              {links.map((l) => (
+                <li key={l.to}>
+                  <Link href={l.to}>
+                    <a className="inline-block px-0 py-3 duration-700 border-b-2 border-transparent lg:p-4 hover:border-white focus:bg-none">
+                      {l.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </motion.div>
       </motion.div>

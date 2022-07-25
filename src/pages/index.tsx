@@ -101,6 +101,11 @@ const Home: NextPage = () => {
                 <h2 className="text-4xl font-bold">Nouveautés sur le blog</h2>
                 <Articles />
               </div>
+              <Link href="/blog">
+                <a className="mt-5 text-primary-300 block">
+                  Voir plus d&apos; aticles
+                </a>
+              </Link>
             </div>
           </section>
         </div>

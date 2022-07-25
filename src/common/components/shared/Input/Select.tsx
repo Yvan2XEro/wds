@@ -11,6 +11,7 @@ export function Select({
   id = "",
   type = "",
   label,
+  name = "",
   value,
   onChange,
   placeholder = "",
@@ -19,14 +20,15 @@ export function Select({
 }: SelectPropsType) {
   return (
     <div className="mb-6">
-      <label htmlFor={id} className="block mb-2 text-sm font-medium">
-        {label}
+      <label htmlFor={id} className="block text-sm font-medium">
+        {label} <span className="text-xl">:</span>
       </label>
       <select
         id={id}
         onChange={onChange}
         placeholder={placeholder}
         value={value}
+        name={name}
         className={
           "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-300 focus:border-primary-300 block w-full p-2.5 " +
           className

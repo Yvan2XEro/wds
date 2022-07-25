@@ -1,6 +1,5 @@
 import React from "react";
 import Skill from "../Skill";
-import Noconection from "../../../assets/images/no-connection.gif";
 import { SERVICES_DATA } from "src/pages/services";
 
 function Skills() {
@@ -25,30 +24,6 @@ function Skills() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
-      <div className="px-8 md:px-16 md:flex">
-        <div className="mt-10 md:w-[50%]">
-          <h6 className="mb-1 outline-rounded">Nos services</h6>
-          <h2 className="mb-2 text-4xl font-bold">
-            Derrière l&apos;histoire de l&apos;agence numérique WDS
-          </h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
-            debitis nesciunt, recusandae quos nam optio, magni doloremque
-            dignissimos, inventore hic eum aspernatur ab. Consequuntur, laborum
-            commodi. Similique ipsam laudantium laborum blanditiis iure sit
-            officia quam tenetur voluptatem iste. Modi, quia.Consequuntur,
-            laborum commodi. Similique ipsam laudantium laborum blanditiis iure
-            sit officia quam tenetur voluptatem iste. Modi, quia.
-          </p>
-        </div>
-        <div className="">
-          <img
-            src={Noconection.src}
-            alt="Image no connection"
-            className="w-full h-full"
-          />
         </div>
       </div>
     </div>

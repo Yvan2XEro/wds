@@ -1,3 +1,4 @@
+import Socials from "@components/shared/Socials";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useMemo } from "react";
@@ -100,6 +101,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+          <Socials />
           <Copyrigth />
         </div>
       </footer>

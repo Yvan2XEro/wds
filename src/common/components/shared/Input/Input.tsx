@@ -4,8 +4,9 @@ export type InputPropsType = {
   id?: string;
   type?: string;
   min?: number;
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+  value?: string | number;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   label: string;
   className?: string;
@@ -18,18 +19,20 @@ export function Input({
   min = 0,
   onChange,
   placeholder = "",
+  name = "",
   className = "",
 }: InputPropsType) {
   return (
     <div className="mb-6">
-      <label htmlFor={id} className="block mb-2 text-sm font-medium">
-        {label}
+      <label htmlFor={id} className="block text-sm font-medium">
+        {label} <span className="text-xl">:</span>
       </label>
       <input
         type={type}
         id={id}
         min={min}
-        // value={value}
+        name={name}
+        value={value}
         onChange={onChange}
         placeholder={placeholder}
         className={

@@ -7,6 +7,7 @@ import { Post } from "src/common/types";
 import axios from "axios";
 import { postsUrl } from "src/common/utils";
 import { dataToPost } from "src/common/utils/dataToModels";
+import Link from "next/link";
 
 function Blog({ posts }: { posts: Post[] }) {
   return (
@@ -20,13 +21,20 @@ function Blog({ posts }: { posts: Post[] }) {
       </Head>
       <div>
         <Header title="Blog" />
-        <section className="px-6">
-          <div className="grid grid-cols-1 px-2 md:px-8 md:grid-cols-2">
-            {posts.map((p) => (
-              <ArticleBlog key={p.title} data={p} />
-            ))}
-          </div>
-        </section>
+        <div className="px-8 md:px-16">
+          <section>
+            <div className="grid grid-cols-1  md:grid-cols-2">
+              {posts.map((p) => (
+                <ArticleBlog key={p.title} data={p} />
+              ))}
+            </div>
+          </section>
+          <Link href="/services">
+            <a className="mt-5 text-primary-300 block">
+              Découvrez nos services maintenant
+            </a>
+          </Link>
+        </div>
       </div>
       <Footer />
     </div>
