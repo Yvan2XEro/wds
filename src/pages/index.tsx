@@ -53,7 +53,7 @@ const Home: NextPage = () => {
               className="ml-10 md:flex-1 md:w-52 md:pl-3 sm:mx-auto sm:mt-10"
             >
               <h1 className="text-5xl text-white ">
-                WEB AND DIGITAL SERVCES ANGENCY
+                WEB AND DIGITAL SERVICES AGENCY
               </h1>
               <p className="mt-1 ml-2 text-white">
                 Vous voulez une application WEB ou mobile pour votre structure?
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                 <Articles />
               </div>
               <Link href="/blog">
-                <a className="mt-5 text-primary-300 block">
+                <a className="block mt-5 text-primary-300">
                   Voir plus d&apos; aticles
                 </a>
               </Link>

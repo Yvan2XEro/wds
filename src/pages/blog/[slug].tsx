@@ -29,6 +29,8 @@ function Details({ post }: { post: Post }) {
             src={asset(post.image)}
             className="w-full rounded-lg max-h-[500px] object-cover"
             alt="Image Developpement d'application android"
+            width={200}
+            height={170}
           />
         </div>
         <div className="my-3">
@@ -43,7 +45,7 @@ function Details({ post }: { post: Post }) {
         <div className="mt-8">
           <Link href="/blog">
             <a>
-              <button className="mt-2 transition-all block mx-auto hover:scale-105 primary-gradient text-white font-bold py-2 px-4 rounded">
+              <button className="block px-4 py-2 mx-auto mt-2 font-bold text-white transition-all rounded hover:scale-105 primary-gradient">
                 <span>Plus d&apos; articles</span>
               </button>
             </a>
