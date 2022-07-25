@@ -8,7 +8,6 @@ import { asset, getIdFromSlug, singlePostUrl } from "src/common/utils";
 import ReactMarkdown from "react-markdown";
 import { dataToPost } from "src/common/utils/dataToModels";
 import Link from "next/link";
-import { BiPhoneCall } from "react-icons/bi";
 
 function Details({ post }: { post: Post }) {
   return (
@@ -45,7 +44,7 @@ function Details({ post }: { post: Post }) {
           <Link href="/blog">
             <a>
               <button className="mt-2 transition-all block mx-auto hover:scale-105 primary-gradient text-white font-bold py-2 px-4 rounded">
-                <span>Plus d'articles</span>
+                <span>Plus d&apos; articles</span>
               </button>
             </a>
           </Link>
