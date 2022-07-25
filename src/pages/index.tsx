@@ -63,14 +63,14 @@ const Home: NextPage = () => {
                 assisterons le plus rapidement possible.
               </p>
 
-              <div className="flex mt-4">
+              <div className="flex mt-4 pl-3">
                 <Link href="/contacts">
-                  <a className="flex items-center justify-center px-4 py-2 text-white transition-all rounded-full bg-primary-300">
+                  <a className="relative flex items-center border-2 pr-1 justify-center group text-white transition-all rounded-3xl border-w border-white overflow-hidden group-hover:space-x-2 group-hover:text-white group-hover:primary-gradient before:w-0 before:h-full before:absolute before:bottom-0 before:transition-all before:duration-500 hover:before:w-full before:left-0 before:bg-white before:rounded-3xl">
                     <CgMail
                       size={35}
-                      className="inline-block mr-2 transition-all hover:left-1"
+                      className="inline-block rounded-3xl p-1 mr-2 z-10 bg-white text-primary-500 h-full transition-all hover:left-1 "
                     />
-                    <span className="inline-block font-bold transition-all hover:ml-1">
+                    <span className="inline-block font-bold transition-all group-hover:text-primary-500 z-10 group-hover:ml-1 mr-1">
                       Nous contacter
                     </span>
                   </a>
