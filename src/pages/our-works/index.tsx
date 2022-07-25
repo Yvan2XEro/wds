@@ -7,6 +7,8 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { Work, WorkCategory } from "src/common/types";
 import Portfolio from "@components/shared/Portfolio";
 import Testimonials from "@components/shared/Testimonials";
+import Link from "next/link";
+import { BiPhoneCall } from "react-icons/bi";
 
 function OurWorks({
   works,
@@ -42,6 +44,15 @@ function OurWorks({
             Ce que nos clients pensent de nous
           </h2>
           <Testimonials />
+
+          <Link href="/contacts">
+            <a>
+              <button className="mt-2 transition-all block mx-auto hover:scale-105 primary-gradient text-white font-bold py-2 px-4 rounded">
+                <BiPhoneCall className="inline-block mr-1" size={30} />
+                <span>Nous contacter maintenant!</span>
+              </button>
+            </a>
+          </Link>
         </div>
       </div>
       <Footer />

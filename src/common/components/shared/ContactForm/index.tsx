@@ -32,7 +32,6 @@ const ContactForm = ({ selectedService }: { selectedService: number }) => {
       setError("Veuillez remplir tous les champs");
       return;
     }
-    console.log("yoo");
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
       (result) => {
         console.log(result.text);
@@ -181,7 +180,10 @@ const ContactForm = ({ selectedService }: { selectedService: number }) => {
             <span>Lorem ipsum dolor sit amet consectetur adipisicing.</span>
           </p>
         )}
-        <button type="submit" className="btn-primary">
+        <button
+          type="submit"
+          className="btn-primary transition-all hover:scale-105 "
+        >
           Soumettre
         </button>
       </div>

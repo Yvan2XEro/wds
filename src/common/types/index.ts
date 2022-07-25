@@ -3,6 +3,7 @@ export type Service = {
     icon: any;
     title: string;
     text: string;
+    skillPercent?: number;
 };
 
 export type WorkCategory = {

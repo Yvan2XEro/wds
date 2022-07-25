@@ -31,7 +31,7 @@ function Blog({ posts }: { posts: Post[] }) {
           </section>
           <Link href="/services">
             <a className="mt-5 text-primary-300 block">
-              Découvrez nos services maintenant
+              Découvrez aussi nos services...
             </a>
           </Link>
         </div>
