@@ -111,7 +111,7 @@ const Copyrigth = () => {
   return (
     <div className="flex items-center justify-center mt-10">
       <p className="text-sm text-white">
-        © {year} <span className="font-bold">WDS</span>. All rights reserved.
+        © {year} <span className="font-bold">WDS Agency</span>. All rights reserved.
       </p>
     </div>
   );
