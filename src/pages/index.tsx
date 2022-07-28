@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../common/components/layouts/Navbar";
-import HomeSvg from "../common/assets/svg/homebg.svg";
 import Bg2 from "../common/assets/images/bg.jpg";
-import Bg1 from "../common/assets/images/Animatedd.gif";
 import WaveSvg from "../common/assets/svg/wave.svg";
-import Card, { ArticleBlog } from "@components/shared/Card";
+import { ArticleBlog } from "@components/shared/Card";
 import AboutUs from "@components/shared/AboutUs";
 import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
@@ -52,11 +50,11 @@ const Home: NextPage = () => {
               transition={{ duration: 0.5 }}
               className="ml-10 md:flex-1 md:w-52 md:pl-3 sm:mx-auto sm:mt-10"
             >
-              <h1 className="text-5xl text-white ">
+              <h1 className="text-5xl font-bold text-white ">
                 WEB AND DIGITAL SERVICES AGENCY
               </h1>
-              <p className="mt-1 ml-2 text-white">
-                Vous voulez une application WEB ou mobile pour votre structure?
+              <p className="mt-1 text-white">
+                Vous voulez une application Web ou mobile pour votre structure?
                 Vous avez besoin des affiches publicitaires pour votre
                 entreprise? Vous desirez une assistance technique dans vos
                 projets informatiques? Soumetez votre demande et nous vous

@@ -27,7 +27,7 @@ function OurWorks({
         />
       </Head>
       <div>
-        <Header title="Nos traveaux" />
+        <Header title="Nos travaux" />
       </div>
       <div className="mx-8">
         <div className="flex justify-center">
