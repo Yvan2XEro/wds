@@ -1,4 +1,5 @@
-import { Post } from "../types";
+import { Post, User, UserAbout } from "../types";
+import { asset } from "./api";
 
 export function dataToPost(data: any): Post {
     return {
@@ -11,4 +12,18 @@ export function dataToPost(data: any): Post {
         crearedAt: data.date_created,
     }
 
+}
+
+export function dataToUser(data: any): UserAbout {
+    return {
+        ...data,
+        name: data.first_name + ' ' + data.last_name,
+        bio: data.description,
+        avatar: asset(data.avatar),
+        socials: {
+            twitter: data.twitter || "#",
+            linkedin: data.linkedin || "#",
+            github: data.github || "#"
+        },
+    }
 }

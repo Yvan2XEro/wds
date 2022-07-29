@@ -12,3 +12,7 @@ export function singlePostUrl(id: number): string {
 export function asset(file: string): string {
     return `${API_URL}/assets/${file}`;
 }
+
+export function usersUrl(): string {
+    return `${API_URL}/users?fields=id,first_name,last_name,avatar,twitter,github,linkedin,description,founder`
+}

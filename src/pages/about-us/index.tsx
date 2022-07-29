@@ -6,6 +6,8 @@ import Statistcis from "@components/shared/Statistics";
 import Head from "next/head";
 import React from "react";
 import { UserAbout } from "src/common/types";
+import { usersUrl } from "src/common/utils/api";
+import { dataToUser } from "src/common/utils/dataToModels";
 
 function About({ users }: { users: UserAbout[] }) {
   return (
@@ -25,7 +27,7 @@ function About({ users }: { users: UserAbout[] }) {
         <div className="flex justify-center w-full mx-auto">
           <div>
             <h2 className="text-4xl font-bold text-center">Fondateurs</h2>
-            <p className="max-w-sm text-center mx-auto">
+            <p className="max-w-sm mx-auto text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
               odio voluptatum quod rem consequatur, aliquam repellendus
               expedita. Commodi inventore dolore aliquid, aliquam corrupti
@@ -50,7 +52,7 @@ function About({ users }: { users: UserAbout[] }) {
         <div className="flex justify-center w-full mx-auto mt-32">
           <div>
             <h2 className="text-4xl font-bold text-center">Equipe</h2>
-            <p className="max-w-sm text-center mx-auto">
+            <p className="max-w-sm mx-auto text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
               odio voluptatum quod rem consequatur, aliquam repellendus
               expedita. Commodi inventore dolore aliquid, aliquam corrupti
@@ -88,84 +90,11 @@ function About({ users }: { users: UserAbout[] }) {
 
 const avatar = "https://i.pravatar.cc/300";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const { data } = await fetch(usersUrl()).then((r) => r.json());
   return {
     props: {
-      users: [
-        {
-          name: "Yvan Jules Kana",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "UI/UX", "Fullstack"],
-          founder: true,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-        {
-          name: "Cedric Tefoye",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "Designer", "Frontend", "Backend"],
-          founder: true,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-        {
-          name: "Franck Armel Djoya",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "UI/UX", "Backend"],
-          founder: true,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-        // Other users with different names
-        {
-          name: "Yvan Jules Kana",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "UI/UX", "Fullstack"],
-          founder: false,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-        {
-          name: "Cedric Tefoye",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "Designer", "Frontend", "Backend"],
-          founder: false,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-        {
-          name: "Franck Armel Djoya",
-          avatar,
-          bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-          tags: ["Web Dev", "Mobile Dev", "UI/UX", "Backend"],
-          founder: false,
-          socials: {
-            twitter: "https://twitter.com/yvanjuleskana",
-            linkedin: "https://www.linkedin.com/in/yvanjuleskana/",
-            github: "#",
-          },
-        },
-      ],
+      users: data.map(dataToUser) || [],
     },
   };
 }
