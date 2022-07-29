@@ -25,5 +25,6 @@ export function dataToUser(data: any): UserAbout {
             linkedin: data.linkedin || "#",
             github: data.github || "#"
         },
+        tags: data.techs || []
     }
 }

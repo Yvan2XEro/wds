@@ -14,5 +14,5 @@ export function asset(file: string): string {
 }
 
 export function usersUrl(): string {
-    return `${API_URL}/users?fields=id,first_name,last_name,avatar,twitter,github,linkedin,description,founder`
+    return `${API_URL}/users?fields=id,first_name,last_name,avatar,twitter,github,linkedin,description,founder,techs`
 }
