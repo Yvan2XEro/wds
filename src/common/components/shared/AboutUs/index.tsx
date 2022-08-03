@@ -30,38 +30,38 @@ export default function AboutUs({ withMore = true }: AboutUsPropsType) {
         <ul role="list" className="mt-5">
           <li className="mt-1 before:border-cyan-900">
             <FaRegCheckCircle
-              className="text-primary-300 inline-block mr-3"
+              className="inline-block mr-3 text-primary-300"
               size={25}
             />
-            Lorem ipsum dolor sit amet.
+            Disponnible 24/24
           </li>
           <li className="mt-1 before:border-cyan-900">
             <FaRegCheckCircle
-              className="text-primary-300 inline-block mr-3"
+              className="inline-block mr-3 text-primary-300"
               size={25}
             />
-            Lorem ipsum dolor sit amet.
+            Analyse,
           </li>
           <li className="mt-1 before:border-cyan-900">
             <FaRegCheckCircle
-              className="text-primary-300 inline-block mr-3"
+              className="inline-block mr-3 text-primary-300"
               size={25}
             />
-            Lorem ipsum dolor sit amet.
+            Conception
           </li>
           <li className="mt-1 before:border-cyan-900">
             <FaRegCheckCircle
-              className="text-primary-300 inline-block mr-3"
+              className="inline-block mr-3 text-primary-300"
               size={25}
             />
-            Lorem ipsum dolor sit amet, consectetur adipisicing.
+            Choix et selections d'algorithmes optimales
           </li>
           <li className="mt-1 before:border-cyan-900">
             <FaRegCheckCircle
-              className="text-primary-300 inline-block mr-3"
+              className="inline-block mr-3 text-primary-300"
               size={25}
             />
-            Lorem ipsum dolor sit amet, consectetur adipisicing.
+            Développement et maintenance
           </li>
         </ul>
         {withMore && (
