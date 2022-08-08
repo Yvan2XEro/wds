@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import Footer from "@components/layouts/Footer";
 import Statistcis from "@components/shared/Statistics";
 import Link from "next/link";
-import Image from "next/image";
 import { serviceList } from "./services";
 import { CgMail } from "react-icons/cg";
 import { useFetch } from "src/common/hooks";
@@ -61,14 +60,14 @@ const Home: NextPage = () => {
                 assisterons le plus rapidement possible.
               </p>
 
-              <div className="flex mt-4 pl-3">
+              <div className="flex pl-3 mt-4">
                 <Link href="/contacts">
-                  <a className="relative flex items-center border-2 pr-1 justify-center group text-white transition-all rounded-3xl border-w border-white overflow-hidden group-hover:space-x-2 group-hover:text-white group-hover:primary-gradient before:w-0 before:h-full before:absolute before:bottom-0 before:transition-all before:duration-500 hover:before:w-full before:left-0 before:bg-white before:rounded-3xl">
+                  <a className="relative flex items-center justify-center pr-1 overflow-hidden text-white transition-all border-2 border-white group rounded-3xl border-w group-hover:space-x-2 group-hover:text-white group-hover:primary-gradient before:w-0 before:h-full before:absolute before:bottom-0 before:transition-all before:duration-500 hover:before:w-full before:left-0 before:bg-white before:rounded-3xl">
                     <CgMail
                       size={35}
-                      className="inline-block rounded-3xl p-1 mr-2 z-10 bg-white text-primary-500 h-full transition-all hover:left-1 "
+                      className="z-10 inline-block h-full p-1 mr-2 transition-all bg-white rounded-3xl text-primary-500 hover:left-1 "
                     />
-                    <span className="inline-block font-bold transition-all group-hover:text-primary-500 z-10 group-hover:ml-1 mr-1">
+                    <span className="z-10 inline-block mr-1 font-bold transition-all group-hover:text-primary-500 group-hover:ml-1">
                       Nous contacter
                     </span>
                   </a>

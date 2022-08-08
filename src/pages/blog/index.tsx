@@ -4,7 +4,6 @@ import Footer from "@components/layouts/Footer";
 import { ArticleBlog } from "@components/shared/Card";
 import Header from "@components/shared/Header";
 import { Post } from "src/common/types";
-import axios from "axios";
 import { postsUrl } from "src/common/utils";
 import { dataToPost } from "src/common/utils/dataToModels";
 import Link from "next/link";
@@ -23,14 +22,14 @@ function Blog({ posts }: { posts: Post[] }) {
         <Header title="Blog" />
         <div className="px-8 md:px-16">
           <section>
-            <div className="grid grid-cols-1  md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               {posts.map((p) => (
                 <ArticleBlog key={p.title} data={p} />
               ))}
             </div>
           </section>
           <Link href="/services">
-            <a className="mt-5 text-primary-300 block">
+            <a className="block mt-5 text-primary-300">
               Découvrez aussi nos services...
             </a>
           </Link>
