@@ -52,7 +52,9 @@ function Details({ post }: { post: Post }) {
         <ReactMarkdown>{post.text}</ReactMarkdown>
         <div className="mt-16">
           <OthersPost
-            url={postsUrl(`?&filter[category][id][_eq]=${post.category.id}`)}
+            url={postsUrl(
+              `?&filter[category][id][_eq]=${post.category.id}&limit=10`
+            )}
           />
           <Link href="/blog">
             <a className="inline-block px-4 py-2 mx-auto mt-4 font-bold text-white transition-all rounded hover:scale-105 primary-gradient">
