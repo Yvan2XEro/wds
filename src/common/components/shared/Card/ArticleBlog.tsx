@@ -20,7 +20,7 @@ export function ArticleBlog({ data }: ArticleBlogPropsType) {
             <motion.img
               whileHover={{ scaleX: 1.1 }}
               className="w-full max-h-[300px] object-cover"
-              src={asset(data.image)}
+              src={data.image}
               alt="Sunset in the mountains"
             />
           </a>

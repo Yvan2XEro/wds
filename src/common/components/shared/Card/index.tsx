@@ -8,4 +8,6 @@ export { UserCard } from "./UserCard";
 
 export { WorkCard } from "./WorkCard";
 
+export { OtherPost } from "./OtherPost";
+
 export default Card;

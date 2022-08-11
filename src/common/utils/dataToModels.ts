@@ -4,10 +4,11 @@ import { asset } from "./api";
 export function dataToPost(data: any): Post {
     return {
         ...data,
+        image: asset(data.image),
         author: {
             name:
                 data.user_created.first_name + " " + data.user_created.last_name,
-            avatar: data.user_created.avatar,
+            avatar: asset(data.user_created.avatar),
         },
         crearedAt: data.date_created,
     }
