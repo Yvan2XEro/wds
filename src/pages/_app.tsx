@@ -7,20 +7,16 @@ import { useRouter } from "next/router";
 configure({ showSpinner: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     router.events.on("routeChangeStart", () => {
-      setLoading(true);
       start();
     });
     router.events.on("routeChangeComplete", () => {
-      setLoading(false);
       done();
     });
     router.events.on("routeChangeError", () => {
-      setLoading(false);
       done();
     });
   }, [router]);
