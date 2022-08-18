@@ -2,7 +2,7 @@ import "../common/assets/styles/globals.css";
 import "nprogress/nprogress.css";
 import type { AppProps } from "next/app";
 import { configure, start, done } from "nprogress";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 configure({ showSpinner: false });
 
